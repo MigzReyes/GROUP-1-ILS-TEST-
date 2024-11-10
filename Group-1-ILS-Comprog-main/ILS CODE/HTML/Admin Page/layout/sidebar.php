@@ -28,7 +28,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="../pages/tables.html">
+          <a class="nav-link" href="Enquiries.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="fa fa-bullhorn text-dark text-lg"></i>
             </div>
@@ -42,7 +42,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="../pages/tables.html">
+          <a class="nav-link" href="Accounts.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="fa fa-user text-dark text-lg"></i>
             </div>
@@ -54,6 +54,6 @@
 
 <!--FOOTER-->
     <div class="sidenav-footer mx-3 ">
-      <a class="btn btn-primary mt-3 w-100" href="../../RamenMatsurikaFrontPage.html">Back</a>
+      <a class="btn btn-primary mt-3 w-100" href="../RamenMatsurikaFrontPage.html">Back</a>
     </div>
 </aside>

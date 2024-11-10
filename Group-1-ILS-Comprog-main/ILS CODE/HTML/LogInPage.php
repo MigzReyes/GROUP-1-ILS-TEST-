@@ -1,3 +1,8 @@
+<?php 
+require ('../HTML/Admin Page/adminphp/functions.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +43,7 @@
                                 <li><a class="nav-buttons" href="../HTML/RamenMatsurikaFrontPage.html">HOME</a></li>
                                 <li><a class="nav-buttons" href="../HTML/RamenMatsurikaMenu.html">MENU</a></li>
                                 <li><a class="nav-buttons" href="../HTML/RamenMatsurikaAboutUs.html">ABOUT</a></li>
-                                <li><button class="nav-buttons-reservation"><a href="../HTML/LogInPage.html">RESERVATION</a></button></li>
+                                <li><button class="nav-buttons-reservation"><a href="../HTML/LogInPage.php">RESERVATION</a></button></li>
                             </ul>
                         </nav>
                     </div>
@@ -48,6 +53,9 @@
             <!--MAIN FORM------------------------------------------------------------------------------------------------------>
             <div class="container">
                 <div class="box form-box">
+
+                    <?php echo messagePopUp(); ?>
+
                     <header>Login</header>
                     <form action="../PHP/LogInDBnoa.php" method="post">
                         <div class="field input">
