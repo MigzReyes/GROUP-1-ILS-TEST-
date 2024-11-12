@@ -35,8 +35,13 @@
     
                         // Check role and redirect to the page
                         if ($row['role'] == 'user') {
-                            $_SESSION["email"] = $row["email"];
-                            header("Location: ../HTML/RamenMatsurikaReservation.php");
+                            $_SESSION['auth'] = true;
+                            $_SESSION['loggedInUserRole'] = $row['role'];
+                            $_SESSION['loggedInUser'] = [
+                                'name' => $row['name'],
+                                'email' => $row['email']
+                            ];
+                            redirect ('../HTML/RamenMatsurikaFrontPage.php', 'Successfully logged in ');
                             exit();
                         } elseif ($row['role'] == 'admin' || $row['role'] == 'staff') {
                             $_SESSION['auth'] = true;

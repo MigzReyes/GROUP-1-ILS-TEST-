@@ -32,7 +32,7 @@ require ('../HTML/Admin Page/adminphp/functions.php');
             <div class="header-flex">
                 <!--LOGO-->
                 <div class="logo">
-                    <a href="../HTML/RamenMatsurikaFrontPage.html">
+                    <a href="../HTML/RamenMatsurikaFrontPage.php">
                     <img id="logo-image" src="https://i.ibb.co/zS94myh/Branding-Word-1200-x-200-px-1.png" alt="">
                     </a>
                 </div>
@@ -160,7 +160,7 @@ require ('../HTML/Admin Page/adminphp/functions.php');
                 <section class="footer-logo">
                     <!--FOOTER LOGO-->
                     <div id="image-logo">
-                        <a href="../HTML/RamenMatsurikaFrontPage.html"><img src="https://i.ibb.co/c3DkSHT/matsurika-10.png" alt=""></a>
+                        <a href="../HTML/RamenMatsurikaFrontPage.php"><img src="https://i.ibb.co/c3DkSHT/matsurika-10.png" alt=""></a>
                     </div>
                 </section>
                 <section>

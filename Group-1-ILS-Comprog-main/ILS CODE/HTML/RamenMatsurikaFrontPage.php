@@ -29,7 +29,7 @@ require ('../HTML/Admin Page/adminphp/functions.php');
             <div class="header-flex">
                 <!--LOGO-->
                 <div class="logo">
-                    <a href="../HTML/RamenMatsurikaFrontPage.html">
+                    <a href="../HTML/RamenMatsurikaFrontPage.php">
                         <img id="logo-image" src="https://i.ibb.co/zS94myh/Branding-Word-1200-x-200-px-1.png" alt="">
                     </a>
                 </div>
@@ -42,6 +42,8 @@ require ('../HTML/Admin Page/adminphp/functions.php');
                         <li><a class="nav-buttons" href="../HTML/RamenMatsurikaMenu.html">MENU</a></li>
                         <li><a class="nav-buttons" href="../HTML/RamenMatsurikaAboutUs.html">ABOUT</a></li>
                         <li><button class="nav-buttons-reservation"><a href="./LogInPage.php">RESERVATION</a></button></li>
+                        <li><button><a class="nav-buttons" href="./LogInPage.php" style="margin-right: 5px; margin-left: 20px;">LOG IN</a></button></li>
+                        <li><button><a class="nav-buttons" href="./LogInPage.php">SIGN UP</a></button></li>
                     </ul>
                 </nav>
             </div>
@@ -149,7 +151,7 @@ require ('../HTML/Admin Page/adminphp/functions.php');
                 <section class="footer-logo">
                     <!--FOOTER LOGO-->
                     <div id="image-logo">
-                        <a href="../HTML/RamenMatsurikaFrontPage.html"><img src="https://i.ibb.co/c3DkSHT/matsurika-10.png" alt=""></a>
+                        <a href="../HTML/RamenMatsurikaFrontPage.php"><img src="https://i.ibb.co/c3DkSHT/matsurika-10.png" alt=""></a>
                     </div>
                 </section>
                 <section>
