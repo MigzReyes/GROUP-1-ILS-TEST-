@@ -76,7 +76,7 @@ require ('../HTML/Admin Page/adminphp/functions.php');
                             <label for="" class="form-label">Phone</label>
 
                             <div class="form-input">
-                                <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format: 123-456-7890" placeholder="123-456-7890" class="input-textbox form-input" name="phoneNumber" id="phoneNumber" maxlength="12" required>
+                                <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format: 123-456-7890" placeholder="123-456-7890" maxlength="12" class="input-textbox form-input" name="phoneNumber" id="phoneNumber" required>
                             </div>
                         </li>
 
