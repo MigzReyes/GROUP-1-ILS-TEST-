@@ -24,19 +24,19 @@
 
                 $row = mysqli_fetch_array($result);
                 $passwordHash = password_hash($row['password'], PASSWORD_DEFAULT);
-
+                
                 if (password_verify($password, $passwordHash)) {
 
                     // Check if the user is banned
                     if ($row['ban'] == 1) {
-                        redirect('../HTML/LogInPage.php', 'You are Banned :(');
+                        redirect('../HTML/LogInPage.php', 'You are Banned Please Contact Admin');
                     } else {
                         session_start();
     
                         // Check role and redirect to the page
                         if ($row['role'] == 'user') {
                             $_SESSION["email"] = $row["email"];
-                            header("Location: ../HTML/RamenMatsurikaReservation.html");
+                            header("Location: ../HTML/RamenMatsurikaReservation.php");
                             exit();
                         } elseif ($row['role'] == 'admin' || $row['role'] == 'staff') {
                             $_SESSION['auth'] = true;
@@ -50,7 +50,7 @@
                     }
     
                 } else {
-                    redirect('../HTML/LogInPage.php', 'Wrong Password');
+                    redirect('../HTML/LogInPage.php', 'Wrong Password :(');
                 }
                 
             } else {

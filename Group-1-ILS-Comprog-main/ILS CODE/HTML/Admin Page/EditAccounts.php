@@ -33,8 +33,16 @@
                             <!--FULL NAME-->
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label>Full Name</label>
-                                    <input type="text" name="fullName" value="<?php echo $user['data']['fullName']; ?>" class="form-control" require>
+                                    <label>First Name</label>
+                                    <input type="text" name="firstName" value="<?php echo $user['data']['firstName']; ?>" class="form-control" require>
+                                </div>
+                            </div>
+
+                            <!--LASTNAME-->
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label>Last Name</label>
+                                    <input type="text" name="lastName" value="<?php echo $user['data']['lastName']; ?>" class="form-control" require>
                                 </div>
                             </div>
 

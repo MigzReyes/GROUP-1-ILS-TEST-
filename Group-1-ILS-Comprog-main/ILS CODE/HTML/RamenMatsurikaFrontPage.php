@@ -1,3 +1,7 @@
+<?php 
+require ('../HTML/Admin Page/adminphp/functions.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,29 +26,31 @@
     <!--NAVBAR-->
     <header id="site-header">
         <div id="site-header-grid">
-                <div class="header-flex">
-                    <!--LOGO-->
-                    <div class="logo">
-                        <a href="../HTML/RamenMatsurikaFrontPage.html">
-                            <img id="logo-image" src="https://i.ibb.co/zS94myh/Branding-Word-1200-x-200-px-1.png" alt="">
-                        </a>
-                    </div>
-
-                    <!--NAVBAR-->
-                    <nav class="navbar">
-                        <!--LINK NG NAVBAR-->
-                        <ul>
-                            <li><a class="nav-buttons" href="../HTML/RamenMatsurikaFrontPage.html">HOME</a></li>
-                            <li><a class="nav-buttons" href="../HTML/RamenMatsurikaMenu.html">MENU</a></li>
-                            <li><a class="nav-buttons" href="../HTML/RamenMatsurikaAboutUs.html">ABOUT</a></li>
-                            <li><button class="nav-buttons-reservation"><a href="./LogInPage.php">RESERVATION</a></button></li>
-                        </ul>
-                    </nav>
+            <div class="header-flex">
+                <!--LOGO-->
+                <div class="logo">
+                    <a href="../HTML/RamenMatsurikaFrontPage.html">
+                        <img id="logo-image" src="https://i.ibb.co/zS94myh/Branding-Word-1200-x-200-px-1.png" alt="">
+                    </a>
                 </div>
 
-                <div class="video-container">
-                    <video class="video-background" src="https://video.wixstatic.com/video/06d23c_a9cdb1dd684d40148691b8c2acf299d9/720p/mp4/file.mp4" preload="auto" muted loop autoplay></video>
-                </div>
+                <!--NAVBAR-->
+                <nav class="navbar">
+                    <!--LINK NG NAVBAR-->
+                    <ul>
+                        <li><a class="nav-buttons" href="../HTML/RamenMatsurikaFrontPage.php">HOME</a></li>
+                        <li><a class="nav-buttons" href="../HTML/RamenMatsurikaMenu.html">MENU</a></li>
+                        <li><a class="nav-buttons" href="../HTML/RamenMatsurikaAboutUs.html">ABOUT</a></li>
+                        <li><button class="nav-buttons-reservation"><a href="./LogInPage.php">RESERVATION</a></button></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <?php echo messagePopUp() ?>
+
+            <div class="video-container">
+                <video class="video-background" src="https://video.wixstatic.com/video/06d23c_a9cdb1dd684d40148691b8c2acf299d9/720p/mp4/file.mp4" preload="auto" muted loop autoplay></video>
+            </div>
         </div>
     </header>
 

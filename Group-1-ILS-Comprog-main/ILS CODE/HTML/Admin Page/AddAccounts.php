@@ -21,8 +21,15 @@
                             <!--FULL NAME-->
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label>Full Name</label>
-                                    <input type="text" name="fullName" class="form-control">
+                                    <label>First Name</label>
+                                    <input type="text" name="firstName" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label>Last Name</label>
+                                    <input type="text" name="lastName" class="form-control">
                                 </div>
                             </div>
 

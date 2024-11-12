@@ -1,6 +1,9 @@
 <?php 
 require ('../HTML/Admin Page/adminphp/functions.php');
 
+if (isset($_SESSION['auth'])) {
+    redirect ('../HTML/RamenMatsurikaFrontPage.php', 'You are already logged in');
+} 
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +43,7 @@ require ('../HTML/Admin Page/adminphp/functions.php');
                         <nav class="navbar">
                         <!--LINK NG NAVBAR-->
                             <ul>
-                                <li><a class="nav-buttons" href="../HTML/RamenMatsurikaFrontPage.html">HOME</a></li>
+                                <li><a class="nav-buttons" href="../HTML/RamenMatsurikaFrontPage.php">HOME</a></li>
                                 <li><a class="nav-buttons" href="../HTML/RamenMatsurikaMenu.html">MENU</a></li>
                                 <li><a class="nav-buttons" href="../HTML/RamenMatsurikaAboutUs.html">ABOUT</a></li>
                                 <li><button class="nav-buttons-reservation"><a href="../HTML/LogInPage.php">RESERVATION</a></button></li>

@@ -1,5 +1,7 @@
 <?php include('../Admin Page/layout/header.php') ?>
 
+<?php echo alertMessage() ?>
+
 <div class="col-lg-6 col-12">
     <div class="row">
     <div class="col-lg-6 col-md-6 col-12">

@@ -4,7 +4,8 @@ require ('./functions.php');
 
 /*SAVE BUTTON*/
 if (isset($_POST['save'])) {
-    $fullName = validate($_POST['fullName']);
+    $firstName = validate($_POST['firstName']);
+    $lastName = validate($_POST['lastName']);
     $email = validate($_POST['email']);
     $phoneNumber = validate($_POST['phoneNumber']);
     $password = validate($_POST['password']);
@@ -17,9 +18,10 @@ if (isset($_POST['save'])) {
         redirect('../EditAccounts.php?id='.$userId, 'No id found');
     }
 
-    if ($fullName != '' && $email != '' && $phoneNumber != '' && $password != ''){
+    if ($firstName != '' && $lastName != '' && $email != '' && $phoneNumber != '' && $password != ''){
         $query = "UPDATE adduser SET 
-                fullName = '$fullName',
+                firstName = '$firstName',
+                lastName = '$lastName',
                 email = '$email', 
                 phoneNumber = '$phoneNumber', 
                 password = '$password', 

@@ -37,7 +37,7 @@ require ('dbconnect.php');
                 padding: 5px;
                 border: solid; 
                 border-color: rgb(198, 48, 44);
-                border-radius: 5px;">
+                border-radius: 5p;">
                 <h3>'.$_SESSION['message'].'</h3>
             </div>';
             unset ($_SESSION['message']);
@@ -115,6 +115,14 @@ require ('dbconnect.php');
         $query = "DELETE FROM $table WHERE id='$id' LIMIT 1";
         $result = mysqli_query($conn, $query);
         return $result;
+
+    }
+
+/*LOG OUT FUNCTION*/
+    function logoutSession() {
+        unset ($_SESSION['auth']);
+        unset ($_SESSION['loggedInUserRole']);
+        unset ($_SESSION['loggedInUser']);
 
     }
 ?>

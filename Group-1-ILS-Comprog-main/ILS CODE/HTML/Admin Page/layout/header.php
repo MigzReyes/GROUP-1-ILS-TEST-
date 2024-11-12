@@ -1,4 +1,8 @@
-<?php require('adminphp/functions.php'); ?>
+<?php 
+require('adminphp/functions.php'); 
+
+include('adminphp/authentication.php');
+?>
 
 <!DOCTYPE html>
 <html lang="en">

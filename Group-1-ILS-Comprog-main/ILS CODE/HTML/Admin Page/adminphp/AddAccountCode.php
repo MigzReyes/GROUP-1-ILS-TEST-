@@ -5,15 +5,16 @@ require ('./functions.php');
 /*ADD USER BUTTON*/
 if (isset($_POST['submit'])) {
 
-    $fullName = validate($_POST['fullName']);
+    $firstName = validate($_POST['firstName']);
+    $lastName = validate($_POST['lastName']);
     $email = validate($_POST['email']);
     $phoneNumber = validate($_POST['phoneNumber']);
     $password = validate($_POST['password']);
     $role = validate($_POST['role']);   
 
-    if ($fullName != '' && $email != '' && $phoneNumber != '' && $password != '' && $role != ''){
-        $query = "INSERT INTO adduser (fullName, email, phoneNumber, password, role) 
-                VALUES ('$fullName', '$email', '$phoneNumber', '$password', '$role')";
+    if ($firstName != '' && $lastName != '' && $email != '' && $phoneNumber != '' && $password != '' && $role != ''){
+        $query = "INSERT INTO adduser (firstName, lastName, email, phoneNumber, password, role) 
+                VALUES ('$firstName', '$lastName', '$email', '$phoneNumber', '$password', '$role')";
 
         $result = mysqli_query($conn, $query);
         if ($result){

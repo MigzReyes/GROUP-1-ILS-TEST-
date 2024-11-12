@@ -22,7 +22,8 @@
                         <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>Full Name</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
                                 <th>Email</th>
                                 <th>Phone Number</th>
                                 <th>Password</th>
@@ -42,7 +43,8 @@
                                         ?>
                                     <tr>
                                         <td><?php echo $usersData['id']; ?></td>
-                                        <td><?php echo $usersData['fullName']; ?></td>
+                                        <td><?php echo $usersData['firstName']; ?></td>
+                                        <td><?php echo $usersData['lastName']; ?></td>
                                         <td><?php echo $usersData['email']; ?></td>
                                         <td><?php echo $usersData['phoneNumber']; ?></td>
                                         <td><?php echo $usersData['password']; ?></td>
