@@ -1,8 +1,10 @@
 <?php
+require ('../HTML/Admin Page/adminphp/functions.php');
+
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db = "matsurikadbtest";
+$db = "matsurikadb";
 
     //DATABASE CONNECTION
     $conn = new mysqli($host, $user, $pass, $db);
@@ -11,29 +13,19 @@ $db = "matsurikadbtest";
     }
 
     if (isset($_POST["submitdb"])) {
-        $firstName = $_POST["firstName"];
-        $lastName = $_POST["lastName"];
-        $email = $_POST["email"];
-        $phoneNumber = $_POST["phoneNumber"];
-        $numGuest = $_POST["numGuest"];
-        $dateTime = $_POST["dateTime"];
-        $reservation = $_POST["dining"];
+        $phoneNumber = validate($_POST["phoneNumber"]);
+        $numGuest = validate($_POST["numGuest"]);
+        $dateTime = validate($_POST["dateTime"]);
+        $reservation = validate($_POST["dining"]);
 
-        $checkEmail = "SELECT * From signup where email = '$email'";
-        $result = $conn -> query($checkEmail);
-        $errorMessage = "";
-        $showPop = true;
-        if ($result -> num_rows > 0) {
-            $insertQuery = "INSERT INTO reservationdb(firstName, lastName, email, phoneNumber, numGuest, dateTime, reservation)
-                            VALUES ('$firstName', '$lastName', '$email', '$phoneNumber', '$numGuest', '$dateTime', '$reservation')";
-                if ($conn -> query($insertQuery) == TRUE) {
-                    header("location: ../HTML/RamenMatsurikaFrontPage.html");
-                }else {
-                    echo "Error: did not find location". $conn -> error;
-                }
-        }else {
-            header("Location: ../HTML/RamenMatsurikaReservation.html");
-            exit;
+        $query = "INSERT INTO reservationdb (phoneNumber, numGuest, dateTime, reservation)
+            VALUES ('$phoneNumber', '$numGuest', '$dateTime', '$reservation')";
+        $result = mysqli_query($conn, $query);
+
+        if ($result) {
+            redirect ('../HTML/RamenMatsurikaFrontPage.php', 'Thank you for enquiring');
+        } else {
+            redirect ('../HTML/RamenMatsurikaReservation.php', 'Something went wrong');
         }
     }
 ?>

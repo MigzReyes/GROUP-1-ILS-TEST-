@@ -45,7 +45,9 @@ require ('../HTML/Admin Page/adminphp/functions.php');
                         <li><a class="nav-buttons" href="../HTML/RamenMatsurikaFrontPage.php">HOME</a></li>
                         <li><a class="nav-buttons" href="../HTML/RamenMatsurikaMenu.html">MENU</a></li>
                         <li><a class="nav-buttons" href="../HTML/RamenMatsurikaAboutUs.html">ABOUT</a></li>
-                        <li><button class="nav-buttons-reservation"><a href="../HTML/LogInPage.php">RESERVATION</a></button></li>
+                        <li><a href="./RamenMatsurikaReservation.php" class="nav-buttons">RESERVATION</a></li>
+                        <li><a class="nav-buttons" href="./LogInPage.php" style="margin-right: 5px; margin-left: 20px;">LOG IN</a></li>
+                        <li><button class="nav-buttons-reservation"><a href="./SignUpPage.html">SIGN UP</a></button></li>
                     </ul>
                 </nav>
             </div>
@@ -69,37 +71,12 @@ require ('../HTML/Admin Page/adminphp/functions.php');
                             </div>
                         </li>
 
-                        <!--FORM FULL NAME-->
-                        <li class="form-info-layout">
-                            <label for="" class="form-label">Full Name</label>
-
-                            <div class="name-info">
-                                <span>
-                                    <input type="text" name="firstName" id="firstName" class="input-textbox">
-                                    <label for="" class="name">First Name</label>
-                                </span>
-                                <span class="last-name">
-                                    <input type="text" name="lastName" id="lastName" class="input-textbox">
-                                    <label for="" class="name">Last Name</label>
-                                </span>
-                            </div>
-                        </li>
-
-                        <!--FORM EMAIL  -->
-                        <li class="form-info-layout">
-                            <label for="" class="form-label">E-mail</label>
-
-                            <div class="form-input">
-                                <input type="text" placeholder="ex: username@google.com" class="input-textbox form-input" name="email" id="email">
-                            </div>
-                        </li>
-
                         <!--PHONE-->
                         <li class="form-info-layout"> 
                             <label for="" class="form-label">Phone</label>
 
                             <div class="form-input">
-                                <input type="number" class="input-textbox form-input" name="phoneNumber" id="phoneNumber">
+                                <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format: 123-456-7890" placeholder="123-456-7890" class="input-textbox form-input" name="phoneNumber" id="phoneNumber" maxlength="12" required>
                             </div>
                         </li>
 
@@ -108,7 +85,7 @@ require ('../HTML/Admin Page/adminphp/functions.php');
                             <label for="" class="form-label">Number of Guest</label>
 
                             <div class="form-input">
-                                <input type="number" class="input-textbox form-input" name="numGuest" id="numGuest">
+                                <input type="number" class="input-textbox form-input" name="numGuest" id="numGuest" min="1" max="20" required>
                             </div>
                         </li>
 
@@ -117,7 +94,7 @@ require ('../HTML/Admin Page/adminphp/functions.php');
                             <label for="" class="form-label">Date and Time</label>
 
                             <div class="form-input">
-                                <input type="datetime-local" class="input-textbox form-input" name="dateTime" id="dateTime">
+                                <input type="datetime-local" class="input-textbox form-input" name="dateTime" id="dateTime" required>
                             </div>
                         </li>
 
@@ -126,13 +103,11 @@ require ('../HTML/Admin Page/adminphp/functions.php');
                             <label for="" class="form-label">Reservation Type</label>
 
                             <div class="form-input">
-                                <form action="../PHP/reservationDB.php" method="post">
-                                    <select name="dining" id="dining" class="input-textbox form-input">
-                                        <option value="please-select">Please Select</option>
-                                        <option value="private">Private</option>
-                                        <option value="public">Public</option>
-                                    </select>
-                                </form>
+                                <select name="dining" id="dining" class="input-textbox form-input" required>
+                                    <option value="">Please Select</option>
+                                    <option value="private">Private</option>
+                                    <option value="public">Public</option>
+                                </select>
                             </div>
                         </li>
 
