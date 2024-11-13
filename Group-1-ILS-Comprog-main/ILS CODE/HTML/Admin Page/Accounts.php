@@ -16,7 +16,7 @@
 
                     <?php alertMessage(); ?>
 
-                    <table class="table table-striped">
+                    <table id="myTable" class="table table-striped">
                         
                         <!--TABLE HEAD-->
                         <thead>
