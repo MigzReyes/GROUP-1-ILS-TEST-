@@ -62,6 +62,6 @@
 
 <!--FOOTER-->
     <div class="sidenav-footer mx-3 ">
-      <a class="btn btn-primary mt-3 w-100" href="../RamenMatsurikaFrontPage.php">Back</a>
+      <a class="btn btn-primary mt-3 w-100" href="../RamenMatsurikaFrontPage.php">Home</a>
     </div>
 </aside>

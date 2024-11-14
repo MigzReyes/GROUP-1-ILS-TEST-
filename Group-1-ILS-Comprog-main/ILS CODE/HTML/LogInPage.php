@@ -48,7 +48,7 @@ if (isset($_SESSION['auth'])) {
                                 <li><a class="nav-buttons" href="../HTML/RamenMatsurikaAboutUs.html">ABOUT</a></li>
                                 <li><a href="./RamenMatsurikaReservation.php" class="nav-buttons">RESERVATION</a></li>
                                 <li><a class="nav-buttons" href="./LogInPage.php" style="margin-right: 5px; margin-left: 20px;">LOG IN</a></li>
-                                <li><button class="nav-buttons-reservation"><a href="./SignUpPage.html">SIGN UP</a></button></li>
+                                <li><button class="nav-buttons-reservation"><a href="./SignUpPage.php">SIGN UP</a></button></li>
                             </ul>
                         </nav>
                     </div>
@@ -77,7 +77,7 @@ if (isset($_SESSION['auth'])) {
                             <input type="submit" class="button" name="submitLogIn" value="Login" required>
                         </div>
                         <div class="links">
-                            Don't have account? <a href="SignUpPage.html">Sign up now</a>
+                            Don't have account? <a href="SignUpPage.php">Sign up now</a>
                         </div>
                     </form>
                 </div>

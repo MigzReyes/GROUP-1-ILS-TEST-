@@ -1,3 +1,8 @@
+<?php 
+require ('../HTML/Admin Page/adminphp/functions.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,26 +57,29 @@
     <!--MAIN FORM------------------------------------------------------------------------------------------------------>
     <div class="container">
         <div class="box form-box">
+
+            <?php echo messagePopUp() ?>
+
             <header>Sign Up</header> 
             <form action="../PHP/SignUpDBnoa.php" method="post">
                 <div class="field input">
                     <label for="firstName">First Name</label>
-                    <input type="text" name="firstName" id="firstName" autocomplete="off" required>
+                    <input type="text" name="firstName" id="firstName" required>    
                 </div>
 
                 <div class="field input">
                     <label for="lastName">Last Name</label>
-                    <input type="text" name="lastName" id="lastName" autocomplete="off" required>
+                    <input type="text" name="lastName" id="lastName" required>
                 </div>
 
                 <div class="field input">
                     <label for="email">Email</label>
-                    <input type="text" placeholder="user@email.com" name="email" id="email" autocomplete="off" required>
+                    <input type="text" placeholder="user@email.com" required>
                 </div>
 
                 <div class="field input">
                     <label for="phone-number">Phone Number</label>
-                    <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format: 123-456-7890" placeholder="123-456-7890" maxlength="12" name="phoneNumber" id="phoneNumber" autocomplete="off" required>
+                    <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format: 123-456-7890" placeholder="123-456-7890" maxlength="12" name="phoneNumber" id="phoneNumber" required>
                 </div>
 
                 <div class="field input">
@@ -85,7 +93,6 @@
                 </div>
 
                 <div class="field">
-                    
                     <input type="submit" class="btn" name="submitSignup" value="Sign Up" required>
                 </div>
                 <div class="links">

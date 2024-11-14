@@ -47,7 +47,7 @@ require ('../HTML/Admin Page/adminphp/functions.php');
                         <li><a class="nav-buttons" href="../HTML/RamenMatsurikaAboutUs.html">ABOUT</a></li>
                         <li><a href="./RamenMatsurikaReservation.php" class="nav-buttons">RESERVATION</a></li>
                         <li><a class="nav-buttons" href="./LogInPage.php" style="margin-right: 5px; margin-left: 20px;">LOG IN</a></li>
-                        <li><button class="nav-buttons-reservation"><a href="./SignUpPage.html">SIGN UP</a></button></li>
+                        <li><button class="nav-buttons-reservation"><a href="./SignUpPage.php">SIGN UP</a></button></li>
                     </ul>
                 </nav>
             </div>
