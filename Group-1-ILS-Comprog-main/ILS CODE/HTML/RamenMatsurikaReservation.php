@@ -10,6 +10,8 @@ require ('../HTML/Admin Page/adminphp/functions.php');
 
     <!--LINK NG EXTERNAL CSS FILE-->
     <link rel="stylesheet" href="../CSS/CSS Reservation.css">
+    <link id="pagestyle" href="../HTML/User Page/assets/css/soft-ui-dashboard.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../HTML/User Page/assets/scss/soft-ui-dashboard.scss">
         
     <!--TAB LOGO-->
     <link rel="Icon" href="https://i.ibb.co/c3DkSHT/matsurika-10.png">
@@ -48,6 +50,15 @@ require ('../HTML/Admin Page/adminphp/functions.php');
                         <li><a href="./RamenMatsurikaReservation.php" class="nav-buttons">RESERVATION</a></li>
                         <li><a class="nav-buttons" href="./LogInPage.php" style="margin-right: 5px; margin-left: 20px;">LOG IN</a></li>
                         <li><button class="nav-buttons-reservation"><a href="./SignUpPage.php">SIGN UP</a></button></li>
+                        <li class="dropdown">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-user me-lg-1"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../HTML/User Page/User_Page.php">Profile Settings</a></li>
+                                <li><a class="dropdown-item" href="../HTML/User Page/Enquiries.php">Enquiries</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -175,5 +186,8 @@ require ('../HTML/Admin Page/adminphp/functions.php');
         </div>
     </div>
 </footer>    
+
+<!-- Include Bootstrap JS (requires Popper) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

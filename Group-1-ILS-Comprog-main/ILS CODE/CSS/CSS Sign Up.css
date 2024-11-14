@@ -237,9 +237,6 @@ footer {
     margin-left: 80px;
 }
 .fa {
-    padding: 15px;  
-    width: 50px;
-    height: 50px;
     text-align: center;
     text-decoration: none;
     border-radius: 50px;
@@ -251,16 +248,20 @@ footer {
 .fa-facebook {
     background-color: rgba(255, 255, 255, 0.25);
     color: white;
+    padding: 15px;  
+    width: 45px;
 }
 /*TWITTER*/
 .fa-twitter {
     background-color: rgba(255, 255, 255, 0.25);
     color: white;
+    padding: 15px;  
 }
 /*INSTAGRAM*/
 .fa-instagram {
     background-color: rgba(255, 255, 255, 0.25);
     color: white;
+    padding: 15px;  
 }
 
 /*FOOTER COPYRIGHT*/
