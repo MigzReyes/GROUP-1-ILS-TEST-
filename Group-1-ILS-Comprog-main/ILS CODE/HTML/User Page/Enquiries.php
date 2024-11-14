@@ -17,8 +17,7 @@
 
                     <div class="col-md-3 mb-4">
                         <div class="card card-body p-12">
-                            <h5 class="font-weight-bolder mb-0">
-                                
+                            <h5 class="font-weight-bolder mb-0">                    
                             </h5>
                         </div>
                     </div>
