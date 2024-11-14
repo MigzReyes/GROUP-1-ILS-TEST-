@@ -1,7 +1,7 @@
 <?php 
-require('adminphp/functions.php'); 
+require('userphp/functions.php'); 
 
-include('adminphp/authentication.php');
+include('userphp/authentication.php');
 ?>
 
 <!DOCTYPE html>

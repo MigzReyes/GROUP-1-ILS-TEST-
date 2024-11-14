@@ -1,4 +1,4 @@
-<?php include('../Admin Page/layout/header.php') ?>
+<?php include('../User Page/layout/header.php') ?>
 
     <div class="row">
         <div class="col-md-12">

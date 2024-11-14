@@ -1,4 +1,4 @@
-<?php include('../Admin Page/layout/header.php') ?>
+<?php include('../User Page/layout/header.php') ?>
 
 <?php echo alertMessage() ?>
 
@@ -9,4 +9,4 @@
 
 
 
-<?php include('../Admin Page/layout/footer.php') ?>
+<?php include('../User Page/layout/footer.php') ?>
