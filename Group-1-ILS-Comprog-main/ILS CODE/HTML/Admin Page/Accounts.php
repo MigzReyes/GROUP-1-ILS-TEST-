@@ -7,7 +7,15 @@
                 <div class="card-header">
                     <h4>
                         User List
+
+                        <?php if ($_SESSION['loggedInUserRole'] == 'admin') : ?>
                         <a href="./AddAccounts.php" class="btn btn-primary float-end">Add User</a>
+
+                        <?php else : ?>
+                        <a onclick="onclickPopUp('You do not have permission')" class="btn btn-primary float-end">Add User</a>
+
+                        <?php endif ; ?>
+
                     </h4>
                 </div>
 
@@ -40,7 +48,7 @@
                             if (mysqli_num_rows($users) > 0){
 
                                 foreach($users as $usersData){
-                                        ?>
+                                    ?>
                                     <tr>
                                         <td><?php echo $usersData['id']; ?></td>
                                         <td><?php echo $usersData['firstName']; ?></td>
@@ -51,9 +59,17 @@
                                         <td><?php echo $usersData['role'] != 1 ?  $usersData['role'] : ''; ?></td>
                                         <td><?php echo $usersData['ban'] == 1 ? 'True' : 'False'; ?></td>
                                         <td>
-                                            <a href="./EditAccounts.php?id=<?php echo $usersData['id']; ?>" class="btn btn-success btn-sm">Edit</a>
+                                            <?php if ($_SESSION['loggedInUserRole'] == 'admin') : ?>
+                                            <a href="./Edit-Accounts.php?id=<?php echo $usersData['id']; ?>" class="btn btn-success btn-sm">Edit</a>
                                             <a href="./DeleteAccount.php?id=<?php echo $usersData['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this data?')">Delete</a>
-                                        </td>
+                                        
+                                            <?php else : ?>
+                                            <a class="btn btn-success btn-sm" onclick="onclickPopUp('You do not have permission')">Edit</a>
+                                            <a class="btn btn-danger btn-sm" onclick="onclickPopUp('You do not have permission')">Delete</a>
+
+                                            <?php endif; ?>
+
+                                        </td> 
                                     </tr>
                                     <?php
                                 }

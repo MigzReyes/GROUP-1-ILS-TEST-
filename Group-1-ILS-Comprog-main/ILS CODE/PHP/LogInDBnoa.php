@@ -1,6 +1,8 @@
 <?php
     require ('../HTML/Admin Page/adminphp/functions.php');
 
+    session_start();
+
     $host = "localhost";
     $user = "root";
     $pass = "";
@@ -35,23 +37,37 @@
                         session_start();
     
                         // Check role and redirect to the page
+                        foreach ($result as $data) {
+                            $userId = $data['id'];
+                            $userName = $data['firstName'].' '.$data['lastName'];
+                            $userEmail = $data['email'];
+                            $userRole = $data['role'];
+                            $firstName = $data['firstName'];
+                            $lastName = $data['lastName'];
+                        }
                         if ($row['role'] == 'user') {
                             $_SESSION['auth'] = true;
                             $_SESSION['loggedInUserRole'] = $row['role'];
                             $_SESSION['loggedInUser'] = [
-                                'name' => $row['name'],
-                                'email' => $row['email']
+                                'userId' => $userId,
+                                'name' => $userName,
+                                'email' => $userEmail,
+                                'firstName' => $firstName,
+                                'lastName' => $lastName
                             ];
                             redirect ('../HTML/RamenMatsurikaFrontPage.php', 'Successfully logged in ');
                             exit();
-                        } elseif ($row['role'] == 'admin' || $row['role'] == 'staff') {
+                        } elseif ($row['role'] == 'admin' || $row['role'] == 'staff') { 
                             $_SESSION['auth'] = true;
                             $_SESSION['loggedInUserRole'] = $row['role'];
                             $_SESSION['loggedInUser'] = [
-                                'name' => $row['name'],
-                                'email' => $row['email']
+                                'userId' => $userId,
+                                'name' => $userName,
+                                'email' => $userEmail,
+                                'firstName' => $firstName,
+                                'lastName' => $lastName
                             ];
-                            redirect('../HTML/Admin Page/AdminPage.php', 'Successfully logged in');
+                            redirect('../HTML/Admin Page/Dashboard.php', 'Successfully logged in');
                         }
                     }
     

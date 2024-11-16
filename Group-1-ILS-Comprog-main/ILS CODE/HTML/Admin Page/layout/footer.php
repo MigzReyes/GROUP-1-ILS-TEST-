@@ -14,10 +14,10 @@
                   <a href=".././RamenMatsurikaFrontPage.php" class="nav-link text-muted" target="_blank">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a href=".././RamenMatsurikaMenu.html" class="nav-link text-muted" target="_blank">Menu</a>
+                  <a href=".././RamenMatsurikaMenu.php" class="nav-link text-muted" target="_blank">Menu</a>
                 </li>
                 <li class="nav-item">
-                  <a href=".././RamenMatsurikaAboutUs.html" class="nav-link text-muted" target="_blank">About us</a>
+                  <a href=".././RamenMatsurikaAboutUs.php" class="nav-link text-muted" target="_blank">About us</a>
                 </li>
               </ul>
             </div>
@@ -26,6 +26,13 @@
 </footer>
 
 </main>
+  <!--MESSAGE POP UP FOR ONLICK BUTTONS-->
+  <script>
+    function onclickPopUp (message) {
+      alert (message);
+    }
+  </script>
+
   <!--   Core JS Files   -->
   <script src="assets/js/core/popper.min.js"></script>
   <script src="assets/js/core/bootstrap.min.js"></script>

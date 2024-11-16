@@ -43,11 +43,11 @@ require ('../HTML/Admin Page/adminphp/functions.php');
                 <!--LINK NG NAVBAR-->
                     <ul>
                         <li><a class="nav-buttons" href="../HTML/RamenMatsurikaFrontPage.php">HOME</a></li>
-                        <li><a class="nav-buttons" href="../HTML/RamenMatsurikaMenu.html">MENU</a></li>
-                        <li><a class="nav-buttons" href="../HTML/RamenMatsurikaAboutUs.html">ABOUT</a></li>
+                        <li><a class="nav-buttons" href="../HTML/RamenMatsurikaMenu.php">MENU</a></li>
+                        <li><a class="nav-buttons" href="../HTML/RamenMatsurikaAboutUs.php">ABOUT</a></li>
                         <li><a href="./RamenMatsurikaReservation.php" class="nav-buttons">RESERVATION</a></li>
                         <li><a class="nav-buttons" href="./LogInPage.php" style="margin-right: 5px; margin-left: 20px;">LOG IN</a></li>
-                        <li><button class="nav-buttons-reservation"><a href="./SignUpPage.html">SIGN UP</a></button></li>
+                        <li><button class="nav-buttons-reservation"><a href="./SignUpPage.php">SIGN UP</a></button></li>
                     </ul>
                 </nav>
             </div>
@@ -74,7 +74,7 @@ require ('../HTML/Admin Page/adminphp/functions.php');
 
                 <div class="field input">
                     <label for="email">Email</label>
-                    <input type="text" placeholder="user@email.com" required>
+                    <input type="email" name="email" placeholder="user@email.com" required>
                 </div>
 
                 <div class="field input">

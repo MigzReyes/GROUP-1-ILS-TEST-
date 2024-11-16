@@ -1,5 +1,10 @@
 <?php 
 require ('../HTML/Admin Page/adminphp/functions.php');
+
+if (!isset($_SESSION['loggedInUser'])) {
+    redirect ('LogInPage.php', 'You need to log in before making a reservation');
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -45,20 +50,56 @@ require ('../HTML/Admin Page/adminphp/functions.php');
                 <!--LINK NG NAVBAR-->
                     <ul>
                         <li><a class="nav-buttons" href="../HTML/RamenMatsurikaFrontPage.php">HOME</a></li>
-                        <li><a class="nav-buttons" href="../HTML/RamenMatsurikaMenu.html">MENU</a></li>
-                        <li><a class="nav-buttons" href="../HTML/RamenMatsurikaAboutUs.html">ABOUT</a></li>
+                        <li><a class="nav-buttons" href="../HTML/RamenMatsurikaMenu.php">MENU</a></li>
+                        <li><a class="nav-buttons" href="../HTML/RamenMatsurikaAboutUs.php">ABOUT</a></li>
                         <li><a href="./RamenMatsurikaReservation.php" class="nav-buttons">RESERVATION</a></li>
-                        <li><a class="nav-buttons" href="./LogInPage.php" style="margin-right: 5px; margin-left: 20px;">LOG IN</a></li>
-                        <li><button class="nav-buttons-reservation"><a href="./SignUpPage.php">SIGN UP</a></button></li>
+                        
+                        <?php 
+                            if (isset($_SESSION['loggedInUser'])) :
+                        ?>
+
                         <li class="dropdown">
                             <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fa fa-user me-lg-1"></i>
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="../HTML/User Page/User_Page.php">Profile Settings</a></li>
-                                <li><a class="dropdown-item" href="../HTML/User Page/Enquiries.php">Enquiries</a></li>
+                                <li>
+                                    <a class="dropdown-item" href=""><?php echo $_SESSION['loggedInUser']['name']; ?></a>
+                                </li>
+
+                                <hr class="my-2 border-bottom border-gray-200">
+                                <li><a class="dropdown-item" href="
+                                    <?php
+                                        echo $_SESSION['loggedInUserRole'] == 'admin' || $_SESSION['loggedInUserRole'] == 'staff' 
+                                        ? '../HTML/Admin Page/Dashboard.php'
+                                        :'../HTML/User Page/Profile.php';
+                                    ?>">
+
+
+                                    <?php
+                                        echo $_SESSION['loggedInUserRole'] == 'admin' || $_SESSION['loggedInUserRole'] == 'staff' 
+                                        ? 'Admin Settings'
+                                        :'Profile Settings';
+                                    ?>   
+                                </a></li>
+                                <li><a class="dropdown-item" href="
+                                <?php
+                                        echo $_SESSION['loggedInUserRole'] == 'admin' || $_SESSION['loggedInUserRole'] == 'staff' 
+                                        ? '../HTML/Admin Page/Enquiries.php'
+                                        :'../HTML/User Page/Enquiries.php';
+                                ?>">Enquiries</a></li>
+
+                                <hr class="my-2 border-bottom border-gray-200">
+                                <li><a class="dropdown-item" href="../HTML/User Page/userphp/logOut.php">Log Out</a></li>
                             </ul>
                         </li>
+
+                        <?php else : ?>
+
+                        <li><a class="nav-buttons" href="./LogInPage.php" style="margin-right: 5px; margin-left: 20px;">LOG IN</a></li>
+                        <li><button class="nav-buttons-reservation"><a href="./SignUpPage.php">SIGN UP</a></button></li>
+
+                        <?php endif; ?>
                     </ul>
                 </nav>
             </div>
@@ -96,7 +137,13 @@ require ('../HTML/Admin Page/adminphp/functions.php');
                             <label for="" class="form-label">Number of Guest</label>
 
                             <div class="form-input">
-                                <input type="number" class="input-textbox form-input" name="numGuest" id="numGuest" min="1" max="20" required>
+                                <select name="numGuest" id="numGuest" class="input-textbox form-input" required>
+                                    <option value="">Please Select</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="4">4</option>
+                                    <option value="6">6</option>
+                                </select>
                             </div>
                         </li>
 

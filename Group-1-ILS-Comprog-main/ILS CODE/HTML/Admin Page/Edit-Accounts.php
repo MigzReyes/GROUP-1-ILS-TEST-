@@ -16,6 +16,8 @@
 
                     <form action="./adminphp/EditAccountCode.php" method="POST">
 
+                        <?php echo alertMessage() ?>
+
                         <?php 
                             $paramResult = checkParamId('id');
                             if (!is_numeric($paramResult)) {
@@ -27,14 +29,14 @@
                             if ($user['status'] == 200) {
                         ?>
 
-                        <input type="hidden" name="userId" value="<?php echo $user['data']['id']; ?>" require>
+                        <input type="hidden" name="userId" value="<?php echo $user['data']['id']; ?>" required>
                         
                         <div class="row">
                             <!--FULL NAME-->
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label>First Name</label>
-                                    <input type="text" name="firstName" value="<?php echo $user['data']['firstName']; ?>" class="form-control" require>
+                                    <input type="text" name="firstName" value="<?php echo $user['data']['firstName']; ?>" class="form-control" required>
                                 </div>
                             </div>
 
@@ -42,7 +44,7 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label>Last Name</label>
-                                    <input type="text" name="lastName" value="<?php echo $user['data']['lastName']; ?>" class="form-control" require>
+                                    <input type="text" name="lastName" value="<?php echo $user['data']['lastName']; ?>" class="form-control" required>
                                 </div>
                             </div>
 
@@ -50,7 +52,7 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label>Email</label>
-                                    <input type="text" placeholder="user@email.com" name="email" value="<?php echo $user['data']['email']; ?>" class="form-control" require>
+                                    <input type="email" placeholder="user@email.com" name="email" value="<?php echo $user['data']['email']; ?>" class="form-control" required>
                                 </div>
                             </div>
 
@@ -58,7 +60,7 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label>Phone Number</label>
-                                    <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format: 123-456-7890" placeholder="123-456-7890" maxlength="12" name="phoneNumber" value="<?php echo $user['data']['phoneNumber']; ?>" class="form-control" require>
+                                    <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format: 123-456-7890" placeholder="123-456-7890" maxlength="12" name="phoneNumber" value="<?php echo $user['data']['phoneNumber']; ?>" class="form-control" required>
                                 </div>
                             </div>
 
@@ -66,22 +68,29 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label>Password</label>
-                                    <input type="text" name="password" value="<?php echo $user['data']['password']; ?>" class="form-control" require>
+                                    <input type="text" name="password" value="<?php echo $user['data']['password']; ?>" class="form-control" required>
                                 </div>
                             </div>
-                    
+
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label>Confirm Password</label>
+                                    <input type="text" name="conPassword" value="<?php echo $user['data']['password']; ?>" class="form-control" required>
+                                </div>
+                            </div>
+
                             <!--SELECT ROLE-->
                             <div class="col-md-3">
                                 <div class="mb-3">
                                     <label>Select role</label>
-                                    <select name="role" class="form-select" require>
+                                    <select name="role" class="form-select" required>
                                         <option value="">Select Role</option>
                                         <option value="admin" <?php echo $user['data']['role'] == 'admin' ? 'Selected':'' ; ?>>Admin</option>
                                         <option value="staff" <?php echo $user['data']['role'] == 'staff' ? 'Selected':'' ; ?>>Staff</option>
                                         <option value="user" <?php echo $user['data']['role'] == 'user' ? 'Selected':'' ; ?>>User</option>
                                     </select>
                                 </div>
-                            </div>
+                            </div> 
 
                             <!--BAN-->
                             <div class="col-md-3">

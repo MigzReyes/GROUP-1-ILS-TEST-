@@ -22,10 +22,10 @@ if (isset($_SESSION['auth'])) {
                 if ($row['ban'] == 1) {
                     logoutSession();
                     redirect ('../LogInPage.php', 'You are banned. Please contact admin');
-                } elseif ($row['role'] != 'admin') {
+                } elseif ($row['role'] != 'admin' && $row['role'] != 'staff') {
                     logoutSession();
                     redirect ('../LogInPage.php', 'Access Denied');
-                }
+                } 
             }
         } else {
             logoutSession();

@@ -17,14 +17,18 @@
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
 
-        <!--DASHBOARD-->
+        <!--ADMIN / USER-->
+        <li class="nav-item mt-3">
+          <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Profile Settings</h6>
+        </li>
+
         <li class="nav-item">
-          <a class="nav-link <?php echo $pageName == 'User_Page.php' ? 'active':''; ?> "
-          href="User_Page.php">
+          <a class="nav-link <?php echo $pageName == 'Profile.php' ? 'active':''; ?>"
+          href="Profile.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="fa fa-home <?php echo $pageName == 'User_Page.php' ? 'text-white':'text-dark'; ?> text-lg"></i>
+              <i class="fa fa-user <?php echo $pageName == 'Profile.php' ? 'text-white':'text-dark'; ?> text-lg"></i>
             </div>
-            <span class="nav-link-text ms-1">Dashboard</span>
+            <span class="nav-link-text ms-1">Profile</span>
           </a>
         </li>
 
@@ -43,23 +47,7 @@
           </a>
         </li>
 
-        <!--ADMIN / USER-->
-        <li class="nav-item mt-3">
-          <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Profile Settings</h6>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link <?php echo $pageName == 'Accounts.php' ? 'active':''; ?>"
-          href="Accounts.php">
-            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="fa fa-user <?php echo $pageName == 'Accounts.php' ? 'text-white':'text-dark'; ?> text-lg"></i>
-            </div>
-            <span class="nav-link-text ms-1">Profile</span>
-          </a>
-        </li>
-
-        
-
+    
 <!--FOOTER-->
     <div class="sidenav-footer mx-3 ">
       <a class="btn btn-primary mt-3 w-100" href="../RamenMatsurikaFrontPage.php">Home</a>

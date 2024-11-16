@@ -6,7 +6,7 @@
 <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
 <!--LOGO AND NAME-->
     <div class="sidenav-header">
-      <a class="navbar-brand m-0" href="AdminPage.php">
+      <a class="navbar-brand m-0" href=".././RamenMatsurikaFrontPage.php">
         <img src="https://i.ibb.co/c3DkSHT/matsurika-10.png" class="navbar-brand-img h-100" alt="main_logo">
         <span class="ms-1 font-weight-bold">RAMEN Matsurika</span>
       </a>
@@ -19,10 +19,10 @@
 
         <!--DASHBOARD-->
         <li class="nav-item">
-          <a class="nav-link <?php echo $pageName == 'AdminPage.php' ? 'active':''; ?> "
-          href="AdminPage.php">
+          <a class="nav-link <?php echo $pageName == 'Dashboard.php' ? 'active':''; ?> "
+          href="Dashboard.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="fa fa-home <?php echo $pageName == 'AdminPage.php' ? 'text-white':'text-dark'; ?> text-lg"></i>
+              <i class="fa fa-home <?php echo $pageName == 'Dashboard.php' ? 'text-white':'text-dark'; ?> text-lg"></i>
             </div>
             <span class="nav-link-text ms-1">Dashboard</span>
           </a>
@@ -34,10 +34,10 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link <?php echo $pageName == 'Enquiries.php' ? 'active':''; ?>"
+          <a class="nav-link <?php echo $pageName == 'Enquiries.php' || $pageName == 'EnquiriesEdit.php' ? 'active':''; ?>"
           href="Enquiries.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="fa fa-bullhorn <?php echo $pageName == 'Enquiries.php' ? 'text-white':'text-dark'; ?> text-lg"></i>
+              <i class="fa fa-bullhorn <?php echo $pageName == 'Enquiries.php' || $pageName == 'EnquiriesEdit.php' ? 'text-white':'text-dark'; ?> text-lg"></i>
             </div>
             <span class="nav-link-text ms-1">Enquiries</span>
           </a>
@@ -49,10 +49,10 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link <?php echo $pageName == 'Accounts.php' ? 'active':''; ?>"
+          <a class="nav-link <?php echo $pageName == 'Accounts.php' || $pageName == 'Edit-Accounts.php' || $pageName == 'AddAccounts.php' ? 'active':''; ?>"
           href="Accounts.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="fa fa-user <?php echo $pageName == 'Accounts.php' ? 'text-white':'text-dark'; ?> text-lg"></i>
+              <i class="fa fa-user <?php echo $pageName == 'Accounts.php' || $pageName == 'Edit-Accounts.php' || $pageName == 'AddAccounts.php' ? 'text-white':'text-dark'; ?> text-lg"></i>
             </div>
             <span class="nav-link-text ms-1">Accounts</span>
           </a>

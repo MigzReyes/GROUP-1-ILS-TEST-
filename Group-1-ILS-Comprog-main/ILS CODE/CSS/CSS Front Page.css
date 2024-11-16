@@ -89,6 +89,11 @@ div {
     background-color: rgb(198, 48, 44);
     font-family: sans-serif;
 }
+.userName {
+    display: inline;
+    margin: 0px 0px 0px 5px;
+    font-size: 14px;
+}
 .nav-buttons:hover {
     color:  rgb(198,48,44);
     transition: var(--trans, color .4s ease 0s);

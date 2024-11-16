@@ -44,8 +44,8 @@ if (isset($_SESSION['auth'])) {
                         <!--LINK NG NAVBAR-->
                             <ul>
                                 <li><a class="nav-buttons" href="../HTML/RamenMatsurikaFrontPage.php">HOME</a></li>
-                                <li><a class="nav-buttons" href="../HTML/RamenMatsurikaMenu.html">MENU</a></li>
-                                <li><a class="nav-buttons" href="../HTML/RamenMatsurikaAboutUs.html">ABOUT</a></li>
+                                <li><a class="nav-buttons" href="../HTML/RamenMatsurikaMenu.php">MENU</a></li>
+                                <li><a class="nav-buttons" href="../HTML/RamenMatsurikaAboutUs.php">ABOUT</a></li>
                                 <li><a href="./RamenMatsurikaReservation.php" class="nav-buttons">RESERVATION</a></li>
                                 <li><a class="nav-buttons" href="./LogInPage.php" style="margin-right: 5px; margin-left: 20px;">LOG IN</a></li>
                                 <li><button class="nav-buttons-reservation"><a href="./SignUpPage.php">SIGN UP</a></button></li>

@@ -13,13 +13,16 @@ $db = "matsurikadb";
     }
 
     if (isset($_POST["submitdb"])) {
+        $firstName = $_SESSION['loggedInUser']['firstName'];
+        $lastName = $_SESSION['loggedInUser']['lastName'];
+        $email = $_SESSION['loggedInUser']['email'];
         $phoneNumber = validate($_POST["phoneNumber"]);
         $numGuest = validate($_POST["numGuest"]);
         $dateTime = validate($_POST["dateTime"]);
         $reservation = validate($_POST["dining"]);
 
-        $query = "INSERT INTO reservationdb (phoneNumber, numGuest, dateTime, reservation)
-            VALUES ('$phoneNumber', '$numGuest', '$dateTime', '$reservation')";
+        $query = "INSERT INTO reservationdb (firstName, lastName, email, phoneNumber, numGuest, dateTime, reservation)
+            VALUES ('$firstName', '$lastName', '$email', '$phoneNumber', '$numGuest', '$dateTime', '$reservation')";
         $result = mysqli_query($conn, $query);
 
         if ($result) {

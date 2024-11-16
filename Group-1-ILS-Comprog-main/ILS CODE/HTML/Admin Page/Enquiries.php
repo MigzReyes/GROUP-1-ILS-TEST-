@@ -25,7 +25,7 @@
                                 <th>Last Name</th>
                                 <th>Email</th>
                                 <th>Phone Number</th>
-                                <th>Number of Guest</th>
+                                <th>#Guest</th>
                                 <th>Date</th>
                                 <th>Reservation</th>
                                 <th>Action</th>
@@ -50,8 +50,16 @@
                                         <td><?php echo $usersData['dateTime']; ?></td>
                                         <td><?php echo $usersData['reservation']; ?></td>
                                         <td>
+                                            <?php if ($_SESSION['loggedInUserRole'] == 'admin') : ?>
                                             <a href="./EnquiriesEdit.php?id=<?php echo $usersData['id']; ?>" class="btn btn-success btn-sm" style="display: block;">Edit</a>
                                             <a href="./EnquiriesDelete.php?id=<?php echo $usersData['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this data?')">Delete</a>
+
+                                            <?php else : ?>
+                                            <a class="btn btn-success btn-xsm" onclick="onclickPopUp('You do not have permission')">Edit</a>
+                                            <a class="btn btn-danger btn-xsm" onclick="onclickPopUp('You do not have permission')">Delete</a>
+
+                                            <?php endif ; ?>
+
                                         </td>
                                     </tr>
                                     <?php

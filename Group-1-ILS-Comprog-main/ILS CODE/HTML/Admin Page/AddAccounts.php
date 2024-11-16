@@ -22,14 +22,14 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label>First Name</label>
-                                    <input type="text" name="firstName" class="form-control">
+                                    <input type="text" name="firstName" class="form-control" required>
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label>Last Name</label>
-                                    <input type="text" name="lastName" class="form-control">
+                                    <input type="text" name="lastName" class="form-control" required>
                                 </div>
                             </div>
 
@@ -37,7 +37,7 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label>Email</label>
-                                    <input type="text" placeholder="user@email.com" name="email" class="form-control">
+                                    <input type="email" placeholder="user@email.com" name="email" class="form-control" required>
                                 </div>
                             </div>
 
@@ -45,7 +45,7 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label>Phone Number</label>
-                                    <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format: 123-456-7890" placeholder="123-456-7890" maxlength="12" name="phoneNumber" class="form-control">
+                                    <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format: 123-456-7890" placeholder="123-456-7890" maxlength="12" name="phoneNumber" class="form-control" required>
                                 </div>
                             </div>
 
@@ -53,7 +53,15 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label>Password</label>
-                                    <input type="text" name="password" class="form-control">
+                                    <input type="text" name="password" class="form-control" required>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label>Confirm Password</label>
+                                    <input type="text" name="conPassword" class="form-control" required>
                                 </div>
                             </div>
                     
@@ -61,7 +69,7 @@
                             <div class="col-md-3">
                                 <div class="mb-3">
                                     <label>Select role</label>
-                                    <select name="role" class="form-select">
+                                    <select name="role" class="form-select" required>
                                         <option value="">Select Role</option>
                                         <option value="admin">Admin</option>
                                         <option value="staff">Staff</option>

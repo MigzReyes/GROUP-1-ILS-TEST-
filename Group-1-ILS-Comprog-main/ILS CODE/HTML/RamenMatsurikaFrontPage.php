@@ -43,20 +43,56 @@ require ('../HTML/Admin Page/adminphp/functions.php');
                     <!--LINK NG NAVBAR-->
                     <ul>
                         <li><a class="nav-buttons" href="../HTML/RamenMatsurikaFrontPage.php">HOME</a></li>
-                        <li><a class="nav-buttons" href="../HTML/RamenMatsurikaMenu.html">MENU</a></li>
-                        <li><a class="nav-buttons" href="../HTML/RamenMatsurikaAboutUs.html">ABOUT</a></li>
+                        <li><a class="nav-buttons" href="../HTML/RamenMatsurikaMenu.php">MENU</a></li>
+                        <li><a class="nav-buttons" href="../HTML/RamenMatsurikaAboutUs.php">ABOUT</a></li>
                         <li><a href="./RamenMatsurikaReservation.php" class="nav-buttons">RESERVATION</a></li>
-                        <li><a class="nav-buttons" href="./LogInPage.php" style="margin-right: 5px; margin-left: 20px;">LOG IN</a></li>
-                        <li><button class="nav-buttons-reservation"><a href="./SignUpPage.php">SIGN UP</a></button></li>
+
+                        <?php 
+                            if (isset($_SESSION['loggedInUser'])) :
+                        ?>
+
                         <li class="dropdown">
                             <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fa fa-user me-lg-1"></i>
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="../HTML/User Page/User_Page.php">Profile Settings</a></li>
-                                <li><a class="dropdown-item" href="../HTML/User Page/Enquiries.php">Enquiries</a></li>
+                                <li>
+                                    <a class="dropdown-item" href=""><?php echo $_SESSION['loggedInUser']['name']; ?></a>
+                                </li>
+
+                                <hr class="my-2 border-bottom border-gray-200">
+                                <li><a class="dropdown-item" href="
+                                    <?php
+                                        echo $_SESSION['loggedInUserRole'] == 'admin' || $_SESSION['loggedInUserRole'] == 'staff' 
+                                        ? '../HTML/Admin Page/Dashboard.php'
+                                        :'../HTML/User Page/Profile.php';
+                                    ?>">
+
+
+                                    <?php
+                                        echo $_SESSION['loggedInUserRole'] == 'admin' || $_SESSION['loggedInUserRole'] == 'staff' 
+                                        ? 'Admin Settings'
+                                        :'Profile Settings';
+                                    ?>   
+                                </a></li>
+                                <li><a class="dropdown-item" href="
+                                <?php
+                                        echo $_SESSION['loggedInUserRole'] == 'admin' || $_SESSION['loggedInUserRole'] == 'staff' 
+                                        ? '../HTML/Admin Page/Enquiries.php'
+                                        :'../HTML/User Page/Enquiries.php';
+                                ?>">Enquiries</a></li>
+
+                                <hr class="my-2 border-bottom border-gray-200">
+                                <li><a class="dropdown-item" href="../HTML/User Page/userphp/logOut.php">Log Out</a></li>
                             </ul>
                         </li>
+
+                        <?php else : ?>
+
+                        <li><a class="nav-buttons" href="./LogInPage.php" style="margin-right: 5px; margin-left: 20px;">LOG IN</a></li>
+                        <li><button class="nav-buttons-reservation"><a href="./SignUpPage.php">SIGN UP</a></button></li>
+
+                        <?php endif; ?>
                     </ul>
                 </nav>
             </div>
@@ -116,7 +152,7 @@ require ('../HTML/Admin Page/adminphp/functions.php');
 
                             <!--READ MORE BUTTON-->
                             <div class="readmore-container">
-                                <a href="../HTML/RamenMatsurikaAboutUs.html">
+                                <a href="../HTML/RamenMatsurikaAboutUs.php">
                                     <button class="readmore-button">READ MORE</button>
                                 </a>
                             </div>
@@ -141,7 +177,7 @@ require ('../HTML/Admin Page/adminphp/functions.php');
 
                             <!--RESERVATION INFO BUTTOM-->
                             <div class="reservation-button-container">
-                                <a href="../HTML/LogInPage.html">
+                                <a href="../HTML/LogInPage.php">
                                     <button class="reservation-button">CONTACT US</button>
                                 </a>
                             </div>
