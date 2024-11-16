@@ -1,6 +1,6 @@
 <?php
 require ('../HTML/Admin Page/adminphp/functions.php');
-
+session_start();
 $host = "localhost";
 $user = "root";
 $pass = "";
@@ -13,6 +13,7 @@ $db = "matsurikadb";
     }
 
     if (isset($_POST["submitdb"])) {
+        $userId = $_SESSION['loggedInUser']['userId'];
         $firstName = $_SESSION['loggedInUser']['firstName'];
         $lastName = $_SESSION['loggedInUser']['lastName'];
         $email = $_SESSION['loggedInUser']['email'];
@@ -21,14 +22,20 @@ $db = "matsurikadb";
         $dateTime = validate($_POST["dateTime"]);
         $reservation = validate($_POST["dining"]);
 
-        $query = "INSERT INTO reservationdb (firstName, lastName, email, phoneNumber, numGuest, dateTime, reservation)
-            VALUES ('$firstName', '$lastName', '$email', '$phoneNumber', '$numGuest', '$dateTime', '$reservation')";
-        $result = mysqli_query($conn, $query);
-
-        if ($result) {
-            redirect ('../HTML/RamenMatsurikaFrontPage.php', 'Thank you for enquiring');
+        $sqlCheck = "SELECT * FROM reservationdb WHERE email='$email' LIMIT 1";
+        $resulCheck = mysqli_query($conn, $sqlCheck);
+        if (mysqli_num_rows($resulCheck) > 0) {
+            redirect ('../HTML/RamenMatsurikaReservation.php', 'Only one reservation per account');
         } else {
-            redirect ('../HTML/RamenMatsurikaReservation.php', 'Something went wrong');
+            $query = "INSERT INTO reservationdb (firstName, lastName, email, phoneNumber, numGuest, dateTime, reservation)
+            VALUES ('$firstName', '$lastName', '$email', '$phoneNumber', '$numGuest', '$dateTime', '$reservation')";
+            $result = mysqli_query($conn, $query);
+
+            if ($result) {
+                redirect ('../HTML/RamenMatsurikaFrontPage.php', 'Thank you for enquiring');
+            } else {
+                redirect ('../HTML/RamenMatsurikaReservation.php', 'Something went wrong');
+            }
         }
     }
 ?>
