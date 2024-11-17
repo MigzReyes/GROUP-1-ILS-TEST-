@@ -23,10 +23,10 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link <?php echo $pageName == 'Profile.php' ? 'active':''; ?>"
+          <a class="nav-link <?php echo $pageName == 'Profile.php' || $pageName == 'Edit-Profile.php' ? 'active':''; ?>"
           href="Profile.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="fa fa-user <?php echo $pageName == 'Profile.php' ? 'text-white':'text-dark'; ?> text-lg"></i>
+              <i class="fa fa-user <?php echo $pageName == 'Profile.php' || $pageName == 'Edit-Profile.php' ? 'text-white':'text-dark'; ?> text-lg"></i>
             </div>
             <span class="nav-link-text ms-1">Profile</span>
           </a>

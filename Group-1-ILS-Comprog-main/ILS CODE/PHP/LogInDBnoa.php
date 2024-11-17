@@ -44,28 +44,34 @@
                             $userRole = $data['role'];
                             $firstName = $data['firstName'];
                             $lastName = $data['lastName'];
+                            $phoneNumber = $data['phoneNumber'];
+                            $password = $data['password'];
                         }
                         if ($row['role'] == 'user') {
                             $_SESSION['auth'] = true;
                             $_SESSION['loggedInUserRole'] = $row['role'];
                             $_SESSION['loggedInUser'] = [
-                                'userId' => $userId,
+                                'id' => $userId,
                                 'name' => $userName,
                                 'email' => $userEmail,
                                 'firstName' => $firstName,
-                                'lastName' => $lastName
-                            ];
+                                'lastName' => $lastName,
+                                'phoneNumber' => $phoneNumber,
+                                'password' => $password
+                            ]; 
                             redirect ('../HTML/RamenMatsurikaFrontPage.php', 'Successfully logged in ');
                             exit();
                         } elseif ($row['role'] == 'admin' || $row['role'] == 'staff') { 
                             $_SESSION['auth'] = true;
                             $_SESSION['loggedInUserRole'] = $row['role'];
                             $_SESSION['loggedInUser'] = [
-                                'userId' => $userId,
+                                'id' => $userId,
                                 'name' => $userName,
                                 'email' => $userEmail,
                                 'firstName' => $firstName,
-                                'lastName' => $lastName
+                                'lastName' => $lastName,
+                                'phoneNumber' => $phoneNumber,
+                                'password' => $password
                             ];
                             redirect('../HTML/Admin Page/Dashboard.php', 'Successfully logged in');
                         }

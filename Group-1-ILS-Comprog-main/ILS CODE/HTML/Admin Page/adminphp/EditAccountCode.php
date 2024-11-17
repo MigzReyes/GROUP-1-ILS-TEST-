@@ -21,7 +21,7 @@ if (isset($_POST['save'])) {
 
     if ($password == $conPassword) {
 
-        $checkEmail = "SELECT email FROM adduser WHERE email='$email'";
+        $checkEmail = "SELECT email FROM adduser WHERE email='$email' AND id!='$userId' LIMIT 1";
         $checkEmail_run = mysqli_query($conn, $checkEmail);
 
         if (mysqli_num_rows($checkEmail_run) > 0) {
@@ -42,6 +42,7 @@ if (isset($_POST['save'])) {
         
                 $result = mysqli_query($conn, $query);
                 if ($result){
+
                     redirect('../Accounts.php', 'Account Edited Succesfully');
                 } else {
                     redirect('../Edit-Accounts.php'.$userId, 'Something went wrong :(');

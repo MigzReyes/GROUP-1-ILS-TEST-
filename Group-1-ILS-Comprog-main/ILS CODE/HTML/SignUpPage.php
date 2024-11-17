@@ -1,6 +1,10 @@
 <?php 
 require ('../HTML/Admin Page/adminphp/functions.php');
 
+if (isset($_SESSION['loggedInUser'])) {
+    redirect ('RamenMatsurikaFrontPage.php', 'You are already signed in in');
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
