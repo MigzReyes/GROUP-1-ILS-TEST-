@@ -37,7 +37,6 @@ require ('../HTML/Admin Page/adminphp/functions.php');
                         <img id="logo-image" src="https://i.ibb.co/zS94myh/Branding-Word-1200-x-200-px-1.png" alt="">
                     </a>
                 </div>
-
                 <!--NAVBAR-->
                 <nav class="navbar">
                     <!--LINK NG NAVBAR-->
@@ -96,8 +95,8 @@ require ('../HTML/Admin Page/adminphp/functions.php');
                     </ul>
                 </nav>
             </div>
-
-            <?php echo messagePopUp() ?>
+            
+            <?php echo frontPopUp() ?>
 
             <div class="video-container">
                 <video class="video-background" src="https://video.wixstatic.com/video/06d23c_a9cdb1dd684d40148691b8c2acf299d9/720p/mp4/file.mp4" preload="auto" muted loop autoplay></video>

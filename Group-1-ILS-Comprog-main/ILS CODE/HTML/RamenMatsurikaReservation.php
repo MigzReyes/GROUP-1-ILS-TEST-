@@ -113,10 +113,9 @@ if (!isset($_SESSION['loggedInUser'])) {
                 <div class="main-form-flex">
                     <ul class="form-info">
 
-                        <?php echo messagePopUp() ?>
-
                         <!--FORM HEADER-->
                         <li class="form-head">
+                        <?php echo messagePopUp() ?>
                             <div class="form-head-info">
                                 <h2>Book Now!</h2>
                                 <div class="form-subtitle">Please fill the form below accurately to enable us serve you better! welcome!</div>

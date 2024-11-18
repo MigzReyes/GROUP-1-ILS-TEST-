@@ -33,13 +33,24 @@ require ('dbconnect.php');
         if (isset($_SESSION['message'])){
             echo '<div 
                 style="
+                color: #fff !important;
                 background-color: rgb(198, 48, 44);
                 padding: 5px;
                 border: solid; 
                 border-color: rgb(198, 48, 44);
-                border-radius: 5p;">
+                border-radius: 5px;">
                 <h3>'.$_SESSION['message'].'</h3>
             </div>';
+            unset ($_SESSION['message']);
+        }
+    }
+
+/*POP UP FOR FRONT PAGE*/
+    function frontPopUp() {
+        if (isset($_SESSION['message'])){
+            echo '<div class="login-alert">
+                <h4>'.$_SESSION['message'].'</h4>
+                </div>';
             unset ($_SESSION['message']);
         }
     }

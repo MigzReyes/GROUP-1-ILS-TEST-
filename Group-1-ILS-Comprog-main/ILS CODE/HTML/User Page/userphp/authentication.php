@@ -15,7 +15,7 @@ if (isset($_SESSION['auth'])) {
             if (mysqli_num_rows($result) == 0) {
                 
                 logoutSession();
-                redirect ('../LogInPage.php', 'Access Denied 2');
+                redirect ('../LogInPage.php', 'Access Denied');
 
             } else {
                 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -24,12 +24,12 @@ if (isset($_SESSION['auth'])) {
                     redirect ('../LogInPage.php', 'You are banned. Please contact admin');
                 } elseif ($row['role'] != 'user') {
                     logoutSession();
-                    redirect ('../LogInPage.php', 'Access Denied 3');
+                    redirect ('../LogInPage.php', 'Access Denied');
                 }
             }
         } else {
             logoutSession();
-            redirect ('../LogInPage.php', 'Access Denied 1');
+            redirect ('../LogInPage.php', 'Access Denied');
             
         }
     }

@@ -12,12 +12,13 @@ $paramResult = checkParamId('id');
 
             $userDelete = deleteQuery('adduser', $userId);
             if ($userDelete) {
+                session_start();
+                $_SESSION['message'] = 'Account Deleted Successfully';
 
                 session_unset();
+                redirect ('../../HTML/RamenMatsurikaFrontPage.php', 'Account Deleted Successfully');
                 session_destroy();
-
-                redirect('../../HTML/RamenMatsurikaFrontPage.php', 'Account Deleted Succesfully');
-
+                exit();
             } else {
 
                 redirect('Profile.php', 'Something went wrong :(');
