@@ -4541,6 +4541,7 @@ fieldset:disabled .btn {
   display: block;
   width: 100%;
   padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
+  padding-left: 0px;
   clear: both;
   font-weight: 400;
   color: var(--bs-dropdown-link-color);
@@ -8715,6 +8716,7 @@ fieldset:disabled .btn {
 
 .d-flex {
   display: flex !important;
+  flex-wrap: wrap;
 }
 
 .d-inline-flex {
@@ -9881,10 +9883,6 @@ fieldset:disabled .btn {
   margin-bottom: 0.25rem !important;
 }
 
-.mb-2 {
-  margin-bottom: 0.5rem !important;
-}
-
 .mb-3 {
   margin-bottom: 1rem !important;
 }
@@ -10409,7 +10407,7 @@ fieldset:disabled .btn {
 
 .px-2 {
   padding-right: 0.5rem !important;
-  padding-left: 0.5rem !important;
+  padding-left: 1rem !important;
 }
 
 .px-3 {

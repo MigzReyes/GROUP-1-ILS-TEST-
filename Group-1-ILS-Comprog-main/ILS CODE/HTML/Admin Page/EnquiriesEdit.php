@@ -30,14 +30,39 @@
                         <input type="hidden" name="userId" value="<?php echo $user['data']['id']; ?>" required>
                         
                         <div class="row">
-
-                            <!--PHONE NUMBER-->
+                            <!--FIRST NAME-->
                             <div class="col-md-6">
                                 <div class="mb-3">
+                                    <label class="form-label">First Name</label>
+                                    <input class="form-control" disabled value="<?php echo $user['data']['firstName']; ?>" type="text" name="firstName" id="firstName" required>   
+                                </div>
+                            </div>
+                    
+
+                            <!--LAST NAME-->
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Last Name</label>
+                                    <input class="form-control" disabled value="<?php echo $user['data']['lastName']; ?>" type="text" name="lastName" id="lastName" required>
+                                </div>
+                            </div>
+                    
+                            <!--EMAIL-->
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input class="form-control" disabled value="<?php echo $user['data']['email']; ?>" type="email" name="email" placeholder="user@email.com" required>
+                                </div>
+                            </div>
+                    
+                            <!--PHONE NUMBER-->
+                            <div class="col-md-6">
+                                <div class="mb-3"> 
                                     <label>Phone Number</label>
                                     <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format: 123-456-7890" placeholder="123-456-7890" maxlength="12" name="phoneNumber" value="<?php echo $user['data']['phoneNumber']; ?>" class="form-control" required>
                                 </div>
                             </div>
+                        
 
                             <!--NUMBER OF GUEST-->
                             <div class="col-md-6">

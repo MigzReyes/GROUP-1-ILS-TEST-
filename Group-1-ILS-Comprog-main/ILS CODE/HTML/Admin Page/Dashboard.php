@@ -2,7 +2,7 @@
 
 <?php echo alertMessage() ?>
 
-<div class="row">
+<div class="row" style="margin: 0px 0px 100px 0px">
     <div class="col-md-12">
         <?php echo alertMessage() ?>
     </div>

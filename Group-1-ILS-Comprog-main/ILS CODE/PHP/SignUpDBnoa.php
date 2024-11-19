@@ -27,7 +27,7 @@ $conn = mysqli_connect("localhost", "root", "", "matsurikadb");
 
                 redirect ('../HTML/SignUpPage.php', 'Email Already Exist');
 
-            } else {
+            } else { 
                 // Use prepared statements to prevent SQL injection
                 $stmt = $conn->prepare("INSERT INTO adduser (firstName, lastName, email, phoneNumber, password, role) VALUES (?, ?, ?, ?, ?, ?)");
                 $stmt->bind_param("sssiss", $firstName, $lastName, $email, $phoneNumber, $password, $role);

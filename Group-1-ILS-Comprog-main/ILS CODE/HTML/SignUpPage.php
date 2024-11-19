@@ -98,7 +98,7 @@ if (isset($_SESSION['loggedInUser'])) {
 
                 <div class="field">
                     <input type="submit" class="btn" name="submitSignup" value="Sign Up" required>
-                </div>
+                </div> 
                 <div class="links">
                     Already have an account? <a href="../HTML/LogInPage.php">Log In</a>
                 </div>
