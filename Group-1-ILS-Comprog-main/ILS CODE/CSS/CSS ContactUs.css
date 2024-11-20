@@ -1,0 +1,326 @@
+* {
+    background: transparent;
+	border: 0;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+    font-family: sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+div {
+    display: block;
+}
+
+/*HEADER*/
+#site-header {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+#site-header-grid {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    margin-bottom: -10px;
+}
+.header-flex {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+
+/*LOGO*/
+#logo-image {
+    height: 73px;
+    width: 230px;
+    float: left;
+}
+.logo {
+    display: inline-block;
+    margin-right: 290px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    animation:transition 0.50s;
+}
+
+/*NAVBAR*************************************************************************************************************************/
+.navbar {
+    display: inline;
+    float: right;
+    margin-top: 1rem;
+    margin-right: 50px;
+    margin-left: 25px;
+    animation:transition 0.50s;
+}
+.navbar li {
+    list-style-type: none;
+    display: inline;
+}
+.nav-buttons{
+    text-decoration: none;
+    margin-right: 30px;
+    font-size: 15px;
+    color: white;
+    font-family: sans-serif;
+}
+.nav-buttons-reservation {
+    transition: all 0.5s ease;
+}
+.nav-buttons-reservation a {
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 15px;
+    color: white;
+    padding: 5px 7px 5px 7px;
+    border-radius: 5px;
+    background-color: rgb(198, 48, 44);
+    font-family: sans-serif;
+}
+.userName {
+    display: inline;
+    margin: 0px 0px 0px 5px;
+    font-size: 14px;
+}
+.nav-buttons:hover {
+    color:  rgb(198,48,44);
+    transition: var(--trans, color .4s ease 0s);
+}
+.nav-buttons-reservation:hover {
+    transform: scale(1.1);  
+}
+
+/*POP UP*/
+.login-alert {
+    position: fixed;
+    top: 80px;
+    left: 50%; 
+    transform: translateX(-50%); 
+    background-color: rgb(198, 48, 44); 
+    color: #fff; 
+    padding: 10px 20px; 
+    border: solid 1px rgb(198, 48, 44); 
+    border-radius: 5px; 
+    z-index: 1050; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+    animation: fadeOut 3s ease-out forwards;
+}
+
+/* Fade-out keyframes */
+@keyframes fadeOut {
+0% {
+    opacity: 1;
+}
+50% {
+    opacity: 0.5;
+}
+100% {
+    opacity: 0;
+    visibility: hidden;
+}
+}
+
+/*ANIMATION WHEN REFRESHING*/
+@keyframes transition{
+    from{
+        opacity: 0;
+        transform: rotate(-2deg);
+    } 
+    to{
+        opacity: 1;
+        transform:rotate(0);
+    }
+
+}
+
+/*MAIN*********************************************************************************************************************************/
+
+.page-container {
+    display: grid;
+}
+.site-flex {
+    display: flex;
+    justify-content: center;
+    margin: 60px;
+}
+.contact-container {
+    align-content: center;
+}
+.contact {
+    display: flex;
+}
+.contact-flex {
+    margin: 10px;
+}
+.info {
+    margin: 50px;
+}
+
+/*CONTACT FORM*/
+.site-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 95vh;
+    margin: 0px 0px 0px 100px;
+}
+.box{
+     background: #fdfdfd;
+     display: flex;
+     flex-direction: column;
+     background-color: rgb(0 0 0 / .8);
+     color: #fff;
+     padding: 25px 25px;
+     border-radius: 20px;
+     box-shadow: 0 0 128px 0 rgba(0,0,0,0.4),
+                 0 32px 64px -48px rgba(0,0,0,0.7);
+}
+.form-box{
+    width: 450px;
+    margin: 120px 10px 200px;
+}
+.form-box header{
+    font-size: 25px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e6e6e6;
+    margin-bottom: 10px;
+}
+.form-box form .field{
+    display: flex;
+    margin-bottom: 10px;
+    flex-direction: column;
+
+}
+.form-box .input input{
+    width: 100%;
+    font-size: 16px;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+.button{
+    height: 35px;
+    background: rgba(226, 24, 24, 0.808);
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all .3s;
+    margin-top: 10px;
+    padding: 0px 10px;
+}
+.button:hover{
+    opacity: 0.82;
+}
+.submit{
+    width: 100%;
+}
+
+
+/*FOOTER*******************************************************************************************************************************/
+footer {
+    background-color: black;
+}
+.footer-container {
+    position: static;
+    display: grid;
+    height: auto;
+    width: 100%;
+    grid-template-rows: 1fr;
+    grid-template-columns: 100%;
+}
+.footer-content {
+    padding: 30px 10px 30px 10px;
+}
+.footer-info-flex {
+    display: flex;
+}
+.footer-logo {
+    margin: -80px 0px 0px 0px;
+    padding-left: 155px;
+}
+/*FOOTER LOGO*/
+#image-logo img{
+    float: right;
+    height: 50%;
+    width: 50%;    
+}
+
+/*FOOTER INFO (NUMBER, LOCATION)*/
+.footer-address-flex {
+    display: flex;
+    position: relative;
+    margin-top: 50px;
+    margin-left: 150px;
+}
+.footer-info-address {
+     color: rgba(255, 255, 255, 0.79);
+}
+.footer-info-address li {
+    list-style: none;
+    margin-top: 20px;
+}
+
+/*FOOTER WIDGETS/COPYRIGHT*/
+#footer-widgets {
+    border-style: solid;
+    border-width: 1px 0px 0px 0px;
+    color: rgba(255, 255, 255, 0.25);
+    margin-top: 80px;
+    margin-bottom: 0px;
+    margin-left: 180px;
+    margin-right: 180px;
+
+}
+.footer-widgets-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer-widgets-container {
+    padding: 10px;
+    margin-top: 15px;
+    margin-left: 80px;
+}
+.fa {
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+}
+.fa:hover {
+    opacity: 0.9;
+}
+/*FACEBOOK*/
+.fa-facebook {
+    display: inline;
+    background-color: rgba(255, 255, 255, 0.25);
+    color: white;
+    padding: 15px;  
+    width: 45px;
+}
+/*TWITTER*/
+.fa-twitter {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: white;
+    padding: 15px;  
+}
+/*INSTAGRAM*/
+.fa-instagram {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: white;
+    padding: 15px;  
+}
+
+/*FOOTER COPYRIGHT*/
+.footer-copyright {
+    padding: 10px;
+    margin-right: 80px;
+    float: right;
+}
+.copyright-text {
+    text-align: right;
+}

@@ -26039,7 +26039,7 @@ h3,
 
 h4,
 .h4 {
-  font-size: 1.5rem;
+  font-size: 20px;
   line-height: 1.375;
 }
 
@@ -26073,7 +26073,7 @@ h6,
 
 p,
 .p {
-  font-size: 1rem;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.6;
 }
@@ -26128,7 +26128,7 @@ a {
 
 p,
 .p {
-  font-size: 1rem;
+  font-size: 18px;
 }
 
 .lead {
