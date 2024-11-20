@@ -137,6 +137,12 @@ div {
 /*MAIN*********************************************************************************************************************************/
 
 .page-container {
+    background-image: url(https://i.ibb.co/hsgPPP8/HOME-4.png);
+    width: 1900px;
+    height: 900px;
+    background-repeat: no-repeat;
+}
+.page-container {
     display: grid;
 }
 .site-flex {
@@ -146,17 +152,22 @@ div {
 }
 .contact-container {
     align-content: center;
+    margin-top:35px;
+    margin-right: 40px;
 }
 .contact {
     display: flex;
 }
-.contact-flex {
-    margin: 10px;
-}
+
 .info {
     margin: 50px;
 }
-
+.lulu {
+    color: #A9A9A9 !important;
+}
+.landu {
+    margin-left: 46px;
+}
 /*CONTACT FORM*/
 .site-container{
     display: flex;
@@ -164,6 +175,7 @@ div {
     justify-content: center;
     min-height: 95vh;
     margin: 0px 0px 0px 100px;
+    margin-top: 60px;
 }
 .box{
      background: #fdfdfd;
@@ -200,6 +212,7 @@ div {
     border-radius: 5px;
     border: 1px solid #ccc;
     outline: none;
+    color: #fff;
 }
 .button{
     height: 35px;
@@ -219,6 +232,7 @@ div {
 .submit{
     width: 100%;
 }
+
 
 
 /*FOOTER*******************************************************************************************************************************/

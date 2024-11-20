@@ -99,17 +99,31 @@ require ('../HTML/Admin Page/adminphp/functions.php');
             <?php echo frontPopUp() ?>
         </div>
     </header>
+</section>
 
+<!--Image Section: yung imahe sa taas ay---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<main class="page-menu  ">
+    <div class="grid-container">
+        <div class="image-top-container">
+            <div class="eywan">
+
+                <!--OPTIONAL TEXT-->
+                <div class="image-text">
+                    <h3></h3>
+                    <h1></h1>
+                </div>
+            </div>
+        </div>
 <!--MAIN SECTION (page container): PAGE CONTAINER ITO UNG PINAKA GITNA---------------------------------------------------------------------------------------------------------------------------->
     <main class="page-container">
         <div class="site-flex">
             <div class="contact-container">
-                <h1>Supot Center</h1>
+                <h1 class="landu">Support Center</h1>
                 <div class="contact">
                     <div class="contact-flex">
                         <div class="info">
                             <h4>Address</h4>
-                            <p>Cavite, 4106 <br>
+                            <p class="lulu">Cavite, 4106 <br>
                                 Rosario, Gen Trias Drive <br>
                                 STI bldg.
                             </p>
@@ -117,7 +131,7 @@ require ('../HTML/Admin Page/adminphp/functions.php');
 
                         <div class="info">
                             <h4>Email</h4>
-                            <p>ramenmatsurika@gmail.com
+                            <p class="lulu">ramenmatsurika@gmail.com
                             </p>
                         </div>
                     </div>
@@ -125,12 +139,12 @@ require ('../HTML/Admin Page/adminphp/functions.php');
                     <div class="contact-flex">
                         <div class="info">
                             <h4>Phone</h4>
-                            <p>(09) 5069-9899</p>
+                            <p class="lulu">(09) 5069-9899</p>
                         </div>
 
                         <div class="info">
                             <h4>Open</h4>
-                            <p>We are open from 7AM to 10PM, every day</p>
+                            <p class="lulu">We are open from 7AM to 10PM, every day</p>
                         </div>
                     </div>
                 </div>
@@ -144,7 +158,7 @@ require ('../HTML/Admin Page/adminphp/functions.php');
                     <?php echo messagePopUp() ?>
 
                     <header>Contact us</header> 
-                    <form action="../PHP/SignUpDBnoa.php" method="post">
+                    <form action="../PHP/SendEmail.php" method="post">
                         <div class="field input">
                             <label for="firstName">First Name</label>
                             <input type="text" name="firstName" id="firstName" required>    
@@ -163,6 +177,11 @@ require ('../HTML/Admin Page/adminphp/functions.php');
                         <div class="field input">
                             <label for="phoneNumber">Phone Number</label>
                             <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format: 123-456-7890" placeholder="123-456-7890" maxlength="12" name="phoneNumber" id="phoneNumber" required>
+                        </div>
+
+                        <div class="field input">
+                            <label for="message">Message</label>
+                            <textarea name="message" id="message" style="border: 1px solid #ccc; color: #fff; border-radius: 5px; scrollbar-width: thin; padding: 0 10px;"></textarea>
                         </div>
 
                         <div class="field">
