@@ -1,13 +1,6 @@
 <?php
 require ('../HTML/Admin Page/adminphp/functions.php');
 
-// Connect to the database
-$conn = mysqli_connect("localhost", "root", "", "matsurikadb");
-
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
     if (isset($_POST['submitSignup'])) {
         $firstName = $_POST['firstName'] ?? "";
         $lastName = $_POST['lastName'] ?? "";
@@ -21,7 +14,7 @@ $conn = mysqli_connect("localhost", "root", "", "matsurikadb");
 
             // Check Email
             $checkEmail = "SELECT email FROM adduser WHERE email='$email'";
-            $checkEmail_run = mysqli_query($conn, $checkEmail);
+            $checkEmail_run = mysqli_query($conn, $checkEmail); 
 
             if (mysqli_num_rows($checkEmail_run) > 0) {
 
@@ -30,7 +23,7 @@ $conn = mysqli_connect("localhost", "root", "", "matsurikadb");
             } else { 
                 // Use prepared statements to prevent SQL injection
                 $stmt = $conn->prepare("INSERT INTO adduser (firstName, lastName, email, phoneNumber, password, role) VALUES (?, ?, ?, ?, ?, ?)");
-                $stmt->bind_param("sssiss", $firstName, $lastName, $email, $phoneNumber, $password, $role);
+                $stmt->bind_param("ssssss", $firstName, $lastName, $email, $phoneNumber, $password, $role);
 
                 if ($stmt->execute()) {
                     // Redirect to another page after successful insertion

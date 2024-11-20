@@ -47,7 +47,7 @@
                                     <label>Phone Number</label>
                                     <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format: 123-456-7890" placeholder="123-456-7890" maxlength="12" name="phoneNumber" class="form-control" required>
                                 </div>
-                            </div>
+                            </div> 
 
                             <!--PASSWORD-->
                             <div class="col-md-6">

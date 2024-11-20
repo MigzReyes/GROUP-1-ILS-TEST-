@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
     $email = validate($_POST['email']);
     $phoneNumber = validate($_POST['phoneNumber']);
     $password = validate($_POST['password']);
-    $conPassword = validate($_POST['conPassword']);
+    $conPassword = validate($_POST['conPassword']); 
     $role = validate($_POST['role']);   
 
 

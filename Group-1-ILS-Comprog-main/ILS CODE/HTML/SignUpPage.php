@@ -82,7 +82,7 @@ if (isset($_SESSION['loggedInUser'])) {
                 </div>
 
                 <div class="field input">
-                    <label for="phone-number">Phone Number</label>
+                    <label for="phoneNumber">Phone Number</label>
                     <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format: 123-456-7890" placeholder="123-456-7890" maxlength="12" name="phoneNumber" id="phoneNumber" required>
                 </div>
 
