@@ -77,7 +77,8 @@ if (isset($_SESSION['auth'])) {
                             <input type="submit" class="button" name="submitLogIn" value="Login" required>
                         </div>
                         <div class="links">
-                            Don't have account? <a href="SignUpPage.php">Sign up now</a>
+                            Don't have account? <a href="SignUpPage.php">Sign up now</a> <br>
+                            Forgot account? <a href="ContactUs.php">Contact us</a>
                         </div>
                     </form>
                 </div>
@@ -101,6 +102,7 @@ if (isset($_SESSION['auth'])) {
                             <ul>
                                 <li><span>(09) 5069-9899</span></li>
                                 <li><span>Cavite: 4106, Rosario, Gen Trias Drive, STI Bldg</span></li>
+                                <li><a href="ContactUs.php" class="contact-us">Contact us</a></li>
                             </ul>
                         </div>
                     </div>

@@ -209,6 +209,7 @@ require ('../HTML/Admin Page/adminphp/functions.php');
                             <ul>
                                 <li><span>(09) 5069-9899</span></li>
                                 <li><span>Cavite: 4106, Rosario, Gen Trias Drive, STI Bldg</span></li>
+                                <li><a href="ContactUs.php" class="contact-us">Contact us</a></li>
                             </ul>
                         </div>
                     </div>

@@ -213,6 +213,9 @@ footer {
     list-style: none;
     margin-top: 20px;
 }
+.contact-us {
+    color: rgba(255, 255, 255, 0.79);
+}
 
 /*FOOTER WIDGETS/COPYRIGHT*/
 #footer-widgets {
