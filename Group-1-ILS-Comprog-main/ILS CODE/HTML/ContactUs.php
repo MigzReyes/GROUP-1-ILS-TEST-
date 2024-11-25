@@ -56,7 +56,7 @@ require ('../HTML/Admin Page/adminphp/functions.php');
                             </button>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a class="dropdown-item" href=""><?php echo $_SESSION['loggedInUser']['firstName'].' '.$_SESSION['loggedInUser']['lastName']; ?></a>
+                                    <a class="user-profile" href=""><?php echo $_SESSION['loggedInUser']['firstName'].' '.$_SESSION['loggedInUser']['lastName']; ?></a>
                                 </li>
 
                                 <hr class="my-2 border-bottom border-gray-200">

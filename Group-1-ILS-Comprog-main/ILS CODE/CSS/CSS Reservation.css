@@ -91,6 +91,20 @@ div {
     transform: scale(1.1);  
 }
 
+/*DROPDOWM*/
+.user-profile {
+    display: block;
+    width: 100%;
+    font-weight: 400;
+    border: 0;
+    background-color: transparent;
+    white-space: nowrap;
+    text-align: inherit;
+    padding: 0.3rem 1rem;
+    color: #71717a;
+    cursor: default;
+}
+
 /*ANIMATION WHEN REFRESHING*/
 @keyframes transition{
     from{
