@@ -83,12 +83,12 @@ if (isset($_SESSION['loggedInUser'])) {
 
                 <div class="field input">
                     <label for="phoneNumber">Phone Number</label>
-                    <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format: 123-456-7890" placeholder="123-456-7890" maxlength="12" name="phoneNumber" id="phoneNumber" required>
+                    <input type="tel" maxlength="11" pattern="^\d{11}$" title="Phone number must be exactly 11 digits" name="phoneNumber" id="phoneNumber" required>
                 </div>
 
                 <div class="field input">
                     <label for="password">Password</label>
-                    <input type="password" name="password" id="password" autocomplete="off" required>
+                    <input type="password" placeholder="Please use a strong password" name="password" id="password" autocomplete="off" required>
                 </div>
 
                 <div class="field input">

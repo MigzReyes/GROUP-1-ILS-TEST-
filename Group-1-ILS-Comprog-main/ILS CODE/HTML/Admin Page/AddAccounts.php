@@ -45,7 +45,7 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label>Phone Number</label>
-                                    <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format: 123-456-7890" placeholder="123-456-7890" maxlength="12" name="phoneNumber" class="form-control" required>
+                                    <input type="tel" maxlength="11" pattern="^\d{11}$" title="Phone number must be exactly 11 digits" name="phoneNumber" class="form-control" required>
                                 </div>
                             </div> 
 
@@ -53,7 +53,7 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label>Password</label>
-                                    <input type="text" name="password" class="form-control" required>
+                                    <input type="text" placeholder="Please use a strong password" name="password" class="form-control" required>
                                 </div>
                             </div>
 

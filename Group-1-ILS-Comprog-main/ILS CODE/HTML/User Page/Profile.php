@@ -49,14 +49,14 @@ $user = $_SESSION['loggedInUser'];
         <div class="col-md-6">
             <div class="mb-3">
                 <label class="form-label">Phone Number</label>
-                <input class="form-control mb-1" disabled value="<?php echo $user['phoneNumber']; ?>" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format: 123-456-7890" placeholder="123-456-7890" maxlength="12" name="phoneNumber" id="phoneNumber" required>
+                <input class="form-control mb-1" disabled value="<?php echo $user['phoneNumber']; ?>" type="tel" maxlength="11" pattern="^\d{11}$" title="Phone number must be exactly 11 digits" name="phoneNumber" id="phoneNumber" required>
             </div>
         </div>
 
         <div class="col-md-6">
             <div class="mb-3">
                 <label class="form-label">Password</label>
-                <input class="form-control" disabled value="<?php echo $user['password']; ?>" type="password" name="password" id="password" autocomplete="off" required>
+                <input class="form-control" placehoder="Please use a strong password" disabled value="<?php echo $user['password']; ?>" type="password" name="password" id="password" autocomplete="off" required>
             </div>
         </div>
 

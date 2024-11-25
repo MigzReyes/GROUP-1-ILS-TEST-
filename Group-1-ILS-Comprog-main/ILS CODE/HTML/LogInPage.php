@@ -65,7 +65,7 @@ if (isset($_SESSION['auth'])) {
                     <form action="../PHP/LogInDBnoa.php" method="post">
                         <div class="field input">
                             <label for="email">Email</label>
-                            <input type="text" placeholder="user@email.com" name="email" id="email" autocomplete="off" required>
+                            <input type="email" placeholder="user@email.com" name="email" id="email" autocomplete="off" required>
                         </div>
 
                         <div class="field input">
