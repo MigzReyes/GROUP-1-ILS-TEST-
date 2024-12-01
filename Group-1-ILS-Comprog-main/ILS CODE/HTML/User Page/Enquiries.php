@@ -1,4 +1,21 @@
-<?php include('../User Page/layout/header.php') ?>
+<?php 
+
+include('../User Page/layout/header.php');
+
+if (!isset($_SESSION['loggedInUser'])) {
+    redirect ('../HTML/RamenMatsurikaFrontPage.php');
+}
+
+
+$email = $_SESSION['loggedInUser']['email'];
+
+$query = "SELECT email, phoneNumber, numGuest, dateTime, reservation FROM reservationdb WHERE email = ?";
+$stmt = $conn->prepare($query);
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$result = $stmt->get_result();
+
+?>
 
     <div class="row">
         <div class="col-md-12">
@@ -15,12 +32,48 @@
 
                     <?php alertMessage(); ?>
 
-                    <div class="col-md-3 mb-4">
-                        <div class="card card-body p-12">
-                            <h5 class="font-weight-bolder mb-0">                    
-                            </h5>
-                        </div>
-                    </div>
+                    <table class="table table-striped">
+                        
+                        <!--TABLE HEAD-->
+                        <thead>
+                            <tr>
+                                <th>Phone Number</th>
+                                <th>#Guest</th>
+                                <th>Date</th>
+                                <th>Reservation</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <!--TABLE DATA-->
+                        <tbody>
+                            <?php 
+                                if ($result && $result->num_rows > 0): 
+                            ?>
+                            <?php while ($row = $result->fetch_assoc()): ?>
+                                <tr>
+                                    <td><?php echo htmlspecialchars($row['phoneNumber']); ?></td>
+                                    <td><?php echo htmlspecialchars($row['numGuest']); ?></td>
+                                    <td><?php 
+                                        $date = new DateTime($row['dateTime']);
+                                        echo $date->format('Y-m-d h:i A'); 
+                                    ?></td>
+                                    <td><?php echo htmlspecialchars($row['reservation']); ?></td>
+                                    <td>
+                                        <a href="./Enquiries-View.php?email=<?php echo urlencode($row['email']); ?>" class="btn btn-success btn-md" style="display: block;">View</a>
+                                        <br>
+                                        <a href="./EnquiriesDelete.php?email=<?php echo urlencode($row['email']); ?>" class="btn btn-danger btn-md" style="display: block;" onclick="return confirm('Are you sure you want to delete this data? This action cannot be undone.')">Delete</a>
+
+                                    </td>
+                                </tr>
+                            <?php endwhile; ?>
+                            <?php else: ?>
+                                <tr>
+                                    <td colspan="7">No Record Found</td>
+                                </tr>
+                            <?php endif; ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

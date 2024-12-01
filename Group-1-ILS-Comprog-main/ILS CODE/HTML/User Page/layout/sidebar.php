@@ -38,10 +38,10 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link <?php echo $pageName == 'Enquiries.php' ? 'active':''; ?>"
+          <a class="nav-link <?php echo $pageName == 'Enquiries.php' || $pageName == 'Enquiries-View.php' || $pageName == 'Enquiries-Edit.php' ? 'active':''; ?>"
           href="Enquiries.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="fa fa-bullhorn <?php echo $pageName == 'Enquiries.php' ? 'text-white':'text-dark'; ?> text-lg"></i>
+              <i class="fa fa-bullhorn <?php echo $pageName == 'Enquiries.php' || $pageName == 'Enquiries-View.php' || $pageName == 'Enquiries-Edit.php' ? 'text-white':'text-dark'; ?> text-lg"></i>
             </div>
             <span class="nav-link-text ms-1">Enquiries</span>
           </a>

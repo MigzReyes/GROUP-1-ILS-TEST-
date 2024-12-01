@@ -23,8 +23,8 @@ $db = "matsurikadb";
         $reservation = validate($_POST["dining"]);
 
         $sqlCheck = "SELECT * FROM reservationdb WHERE email='$email' LIMIT 1";
-        $resulCheck = mysqli_query($conn, $sqlCheck);
-        if (mysqli_num_rows($resulCheck) > 0) {
+        $resultCheck = mysqli_query($conn, $sqlCheck);
+        if (mysqli_num_rows($resultCheck) > 0) {
             redirect ('../HTML/RamenMatsurikaReservation.php', 'Only one reservation per account');
         } else {
             $query = "INSERT INTO reservationdb (firstName, lastName, email, phoneNumber, numGuest, dateTime, reservation)

@@ -47,7 +47,10 @@
                                         <td><?php echo $usersData['email']; ?></td>
                                         <td><?php echo $usersData['phoneNumber']; ?></td>
                                         <td><?php echo $usersData['numGuest']; ?></td>
-                                        <td><?php echo $usersData['dateTime']; ?></td>
+                                        <td><?php 
+                                            $date = new DateTime($usersData['dateTime']);
+                                            echo $date->format('Y-m-d h:i A'); 
+                                        ?></td>
                                         <td><?php echo $usersData['reservation']; ?></td>
                                         <td>
                                             <?php if ($_SESSION['loggedInUserRole'] == 'admin') : ?>

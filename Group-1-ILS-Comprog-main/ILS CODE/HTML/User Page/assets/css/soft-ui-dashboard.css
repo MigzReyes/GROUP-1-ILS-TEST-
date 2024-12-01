@@ -5383,7 +5383,7 @@ fieldset:disabled .btn {
   flex-direction: column;
   min-width: 0;
   height: var(--bs-card-height);
-  color: var(--bs-body-color);
+
   word-wrap: break-word;
   background-color: var(--bs-card-bg);
   background-clip: border-box;

@@ -97,7 +97,7 @@ if (isset($_SESSION['loggedInUser'])) {
                 </div>
 
                 <div class="field">
-                    <input type="submit" class="btn" name="submitSignup" value="Sign Up" required>
+                    <input type="submit" class="btn" name="submitSignup" value="Sign Up" required onclick="return confirm('Double check your credentials')">
                 </div> 
                 <div class="links">
                     Already have an account? <a href="../HTML/LogInPage.php">Log In</a>

@@ -1,34 +1,26 @@
-<?php include('../Admin Page/layout/header.php') ?>
+<?php include('./layout/header.php') ?>
 
     <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <!--CARD HEADER-->
                 <div class="card-header">
+                <?php alertMessage(); ?>
                     <h4>
                         Edit Reservation Form
-                        <a href="./Enquiries.php" class="btn btn-primary float-end">Back</a>
+                        <a href="./Enquiries-View.php" class="btn btn-primary float-end">Back</a>
                     </h4>
                 </div>
 
                 <!--CARD BODY-->
                 <div class="card-body">
 
-                    <form action="./adminphp/enquiriesEditCode.php" method="POST">
+                    <form action="userphp/enquiriesEditCode.php" method="POST">
 
                         <?php 
-                            $paramResult = checkParamId('id');
-                            if (!is_numeric($paramResult)) {
-                                echo '<h5>'.$paramResult.'</h5>';
-                                return false;
-                            }
-
-                            $user = getById('reservationdb', checkParamId('id'));
+                            $user = getByEmail('reservationdb', $email);
                             if ($user['status'] == 200) {
                         ?>
-
-                        <input type="hidden" name="userId" value="<?php echo $user['data']['id']; ?>" required>
-                        
                         <div class="row">
                             <!--FIRST NAME-->
                             <div class="col-md-6">
@@ -116,4 +108,4 @@
         </div>
     </div>
 
-<?php include('../Admin Page/layout/footer.php') ?>
+<?php include('./layout/footer.php') ?>

@@ -1,36 +1,58 @@
 <?php 
 
-require ('./functions.php');
+require('./functions.php');
 
-/*SAVE BUTTON*/
 if (isset($_POST['save'])) {
     $phoneNumber = validate($_POST['phoneNumber']);
     $numGuest = validate($_POST['numGuest']);
-    $dateTime = validate($_POST['dateTime']);   
+    $dateTime = validate($_POST['dateTime']);
     $reservation = validate($_POST['reservation']);
+    $email = $_SESSION['loggedInUser']['email'];
 
-    $userId = validate($_POST['userId']);
-    $user = getById('reservationdb', $userId);
-    if ($user['status'] != 200) {
-        redirect('../EnquiriesEdit.php?id='.$userId, 'No id found');
+    // Debug inputs
+    var_dump($phoneNumber, $numGuest, $dateTime, $reservation, $email);
+
+    // Check if the email exists in the database
+    $queryFetch = "SELECT * FROM reservationdb WHERE email = '$email'";
+    $resultFetch = mysqli_query($conn, $queryFetch);
+    if (mysqli_num_rows($resultFetch) == 0) {
+        die('No record found for this email.');
+    }
+    $currentData = mysqli_fetch_assoc($resultFetch);
+
+    // Check if data is different
+    if (
+        $currentData['phoneNumber'] == $phoneNumber &&
+        $currentData['numGuest'] == $numGuest &&
+        $currentData['dateTime'] == $dateTime &&
+        $currentData['reservation'] == $reservation
+    ) {
+        die('No changes detected. Please modify the form data to update.');
     }
 
-    if ($phoneNumber != '' && $numGuest != '' && $dateTime != '' && $reservation != ''){
+    if ($phoneNumber != '' && $numGuest != '' && $dateTime != '' && $reservation != '') {
         $query = "UPDATE reservationdb SET 
                 phoneNumber = '$phoneNumber', 
                 numGuest = '$numGuest', 
                 dateTime = '$dateTime', 
                 reservation = '$reservation' 
-                WHERE id = '$userId'";
+                WHERE email = '$email'";
+
+        // Debug the query
+        echo $query;
 
         $result = mysqli_query($conn, $query);
-        if ($result){
-            redirect('../Enquiries.php', 'Reservation Form Edited Succesfully');
+        if (!$result) {
+            die('Error executing query: ' . mysqli_error($conn));
+        }
+
+        if (mysqli_affected_rows($conn) > 0) {
+            redirect('../Enquiries-View.php', 'Reservation Form Edited Successfully');
         } else {
-            redirect('../EnquiriesEdit.php', 'Something went wrong :(');
+            redirect('../Enquiries-Edit.php', 'No data were updated');
         }
     } else {
-        redirect('../EnquiriesEdit.php', 'Please fill all the input fields');
+        die('Please fill all the input fields.');
     }
 }
 

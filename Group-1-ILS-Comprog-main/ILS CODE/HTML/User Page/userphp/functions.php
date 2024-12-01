@@ -115,6 +115,41 @@ require ('dbconnect.php');
         }
     }
 
+/*USER DATA EMAIL*/
+    function getByEmail($tableName, $email){
+        global $conn;
+
+        $table = validate($tableName);
+        $email = validate($email);
+
+        $query = "SELECT * FROM $table WHERE email='$email' LIMIT 1";
+        $result = mysqli_query($conn, $query);
+
+        if ($result){
+            if (mysqli_num_rows($result) == 1) {
+                $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+                $response = [
+                    'status' => 200, 
+                    'message' => 'Succesfully fetched data',
+                    'data' => $row
+                ];
+                return $response;
+            } else {
+                $response = [
+                    'status' => 404, 
+                    'message' => 'No data found :('
+                ];
+                return $response;
+            }
+        } else {
+            $response = [
+                'status' => 500, 
+                'message' => 'Something went wrong'
+            ];
+            return $response;
+        }
+    }
+
 /*DELETE USER QUERY*/
     function deleteQuery($tableName, $id) {
 
@@ -123,6 +158,19 @@ require ('dbconnect.php');
         $table = validate($tableName);
         $id = validate($id);
         $query = "DELETE FROM $table WHERE id='$id' LIMIT 1";
+        $result = mysqli_query($conn, $query);
+        return $result;
+
+    }
+
+/*DELETE USER RESERVATION*/
+    function deleteQueryForm($tableName, $email) {
+
+        global $conn;
+
+        $table = validate($tableName);
+        $email = validate($email);
+        $query = "DELETE FROM $table WHERE email='$email' LIMIT 1";
         $result = mysqli_query($conn, $query);
         return $result;
 

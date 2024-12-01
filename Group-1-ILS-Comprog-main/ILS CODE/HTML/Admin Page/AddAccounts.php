@@ -81,7 +81,7 @@
                             <div class="col-md-6">
                                 <div class="mb-3 text-end">
                                     <br/>
-                                    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" name="submit" class="btn btn-primary" onclick="return confirm('Double check your credentials')">Submit</button>
                                 </div>
                             </div>
                         </div>

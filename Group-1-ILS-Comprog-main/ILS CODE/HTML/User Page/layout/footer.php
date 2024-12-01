@@ -44,6 +44,27 @@
   });
   </script>
   
+<!-- SCREENSHOT -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script>
+    document.getElementById("downloadScreenshot").addEventListener("click", function () {
+        const receipt = document.querySelector(".receipt"); // Ensure this class matches your div
+        if (!receipt) {
+            alert("Receipt element not found!");
+            return;
+        }
+        html2canvas(receipt, { useCORS: true }).then(canvas => {
+            const link = document.createElement('a');
+            link.download = 'receipt.png'; // Name of the image file
+            link.href = canvas.toDataURL(); // Convert to data URL
+            link.click(); // Trigger the download
+        }).catch(err => {
+            console.error("Error generating screenshot:", err);
+            alert("Unable to capture receipt. Check the console for details.");
+        });
+    });
+</script>
+
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->

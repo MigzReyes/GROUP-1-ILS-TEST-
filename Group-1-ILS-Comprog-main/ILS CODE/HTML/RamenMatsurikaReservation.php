@@ -127,10 +127,10 @@ if (!isset($_SESSION['loggedInUser'])) {
                             <label for="" class="form-label">Phone</label>
 
                             <div class="form-input">
-                                <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format: 123-456-7890" placeholder="123-456-7890" maxlength="12" class="input-textbox form-input" name="phoneNumber" id="phoneNumber" required>
+                                <input type="tel" maxlength="11" pattern="^\d{11}$" title="Phone number must be exactly 11 digits" class="input-textbox form-input" name="phoneNumber" id="phoneNumber" required>
                             </div>
                         </li>
-
+ 
                         <!--# NUMBER OF GUEST-->
                         <li class="form-info-layout">
                             <label for="" class="form-label">Number of Guest</label>
@@ -141,7 +141,6 @@ if (!isset($_SESSION['loggedInUser'])) {
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="4">4</option>
-                                    <option value="6">6</option>
                                 </select>
                             </div>
                         </li>
@@ -172,7 +171,7 @@ if (!isset($_SESSION['loggedInUser'])) {
                         <li class="submit-button-flex">
                             <div class="submit-button-container">
                                 <div class="submit-button">
-                                    <input type="submit" class="btn" name="submitdb" value="Submit" required>
+                                    <input type="submit" class="btn" name="submitdb" value="Submit" required onclick="return confirm('Double check your credentials')">
                                 </div>
                             </div>
                         </li>

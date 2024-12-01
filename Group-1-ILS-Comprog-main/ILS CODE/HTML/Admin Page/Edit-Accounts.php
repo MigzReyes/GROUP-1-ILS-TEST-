@@ -105,7 +105,7 @@
                             <div class="col-md-6">
                                 <div class="mb-3 text-end">
                                     <br/>
-                                    <button type="save" name="save" class="btn btn-primary">Save</button>
+                                    <button type="save" name="save" class="btn btn-primary" onclick="return confirm('Are you sure you want to save the changes?')">Save</button>
                                 </div>
                             </div>
                         </div>

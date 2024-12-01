@@ -69,7 +69,7 @@ $user = $_SESSION['loggedInUser'];
             <!--BUTTONS-->
             <hr class="border-light m-0">
             <div class="d-flex justify-content-end mt-3">
-                <input type="submit" class="btn btn-primary" name="saveChanges" value="Save Changes" required>
+                <input type="submit" class="btn btn-primary" name="saveChanges" value="Save Changes" required onclick="return confirm('Are you sure you want to save the changes?')">
                 <a href="javascript:history.back()" class="btn btn-default btn-sm">Cancel</a>
             </div>
         </div>
