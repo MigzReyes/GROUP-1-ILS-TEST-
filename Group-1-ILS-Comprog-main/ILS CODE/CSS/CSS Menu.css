@@ -128,18 +128,6 @@ div {
     font-size: 50px;
     animation:transition 0.50s;
 }
-/*ANIMATION WHEN REFRESHING*/
-@keyframes transition{
-    from{
-        opacity: 0;
-        transform: rotate(-2deg);
-    } 
-    to{
-        opacity: 1;
-        transform:rotate(0);
-    }
-
-}
 
 .menu-container {
     display: flex;
@@ -151,7 +139,139 @@ div {
     position: relative;
     height: 1200px;
 }
+/*CARD*/
+.menu {
+    background-color: #f0f0f0;
+    padding: 60px 0px 120px 0px;
+}
+.header {
+    display: flex;
+    justify-content: center;
+}
+.menu-btn {
+    border: 1px none;
+    padding: 10px 600px;
+    border-radius: 10px;
+    background-color: white;
+    cursor: default !important;
+}
+.menu-btn h2 {
+    letter-spacing: 5px;
+    margin: 0px;
+}
+.CARD {
+    margin: 0px;
+    min-height: 57vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
 
+.menu-card {
+    background: white;
+    border-radius: 24px;
+    padding: 24px;
+    width: 100%;
+    max-width: 430px;
+    position: relative;
+    transition: transform 0.5s ease, box-shadow 0.10s ease;
+    cursor: pointer;    
+    height: 440px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.menu-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
+    
+}
+
+.food-image {
+    width: 300px;
+    height: 280px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 0px;
+    display: block;
+    transition: transform 0.3s ease;
+    float: none;
+    top: -135px;
+}
+
+.menu-card:hover .food-image {
+    transform: scale(1.1);
+}
+
+.title {
+    color: black;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0 0 0px 0;
+    transition: color 0.3s ease;
+}
+
+.menu-card:hover .title {
+    color: #000000;
+}
+
+.description {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 300px;
+}
+
+.price {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    background: #c6302c;
+    color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.menu-card:hover .price {
+    transform: rotate(15deg) scale(1.1);
+    background-color: #c6302c;
+}
+
+@media (max-width: 480px) {
+    .menu-card {
+        padding: 16px;
+    }
+
+    .food-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .price {
+        width: 60px;
+        height: 60px;
+        font-size: 18px;
+    }
+}
 
 /*FOOTER************************************************************************************************************************************/
 footer {

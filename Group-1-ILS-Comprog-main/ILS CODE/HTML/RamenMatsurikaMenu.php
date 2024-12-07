@@ -103,7 +103,7 @@ require ('../HTML/User Page/userphp/functions.php');
     <div class="grid-container">
         <div class="image-top-container">
             <div class="image-top">
-                <img src="https://i.ibb.co/wz41yx2/Food-Menu-9.png" alt="">
+                <img src="https://i.ibb.co/1MVYqY4/Untitled-design-10.png" alt="">
 
                 <!--OPTIONAL TEXT-->
                 <div class="image-text">
@@ -112,11 +112,49 @@ require ('../HTML/User Page/userphp/functions.php');
                 </div>
             </div>
         </div>
-
-        <!--MENU IMAGE-->
-        <div class="menu-container">
-            <div  class="menu-image">
-                <img src="https://i.ibb.co/r5LPqWb/Ramen-Matsurika-Menu-11-x-12-in.png" alt="">
+    </div>
+    <div class="menu">
+        <div class="header">
+            <button class="menu-btn"><h2>MENU</h2></button>
+        </div>
+        <div class="CARD">
+            <div class="menu-card">
+                <img src="https://i.ibb.co/C0cyT2c/Untitled-design-9.png" alt="Shio Ramen" class="food-image">
+                <h2 class="title">Shio Ramen</h2>
+                <p class="description">A delicate blend of savory broth and thin noodles, topped with fresh ingredients for a light.</p>
+                <div class="price">₱210</div>
+            </div>
+            <div class="menu-card">
+                <img src="https://i.ibb.co/TL0ZqMn/Untitled-design-12.png" alt="Shoyu Ramen" class="food-image">
+                <h2 class="title">Shoyu Ramen</h2>
+                <p class="description">Rich soy-based broth paired with perfectly cooked noodles, creating comforting ramen bowl.</p>
+                <div class="price">₱200</div>
+            </div>
+            <div class="menu-card">
+                <img src="https://i.ibb.co/bXX1wJJ/Untitled-design-15.png" alt="Shio Ramen" class="food-image">
+                <h2 class="title">Indo Ramen</h2>
+                <p class="description">A fusion of vibrant Indonesian spices and traditional ramen elements, delivering a bold taste.</p>
+                <div class="price">₱200</div>
+            </div>
+        </div>
+        <div class="CARD">
+            <div class="menu-card">
+                <img src="https://i.ibb.co/tmbZqzT/Untitled-design-14.png" alt="Shio Ramen" class="food-image">
+                <h2 class="title">Tonkatsu Ramen</h2>
+                <p class="description">Crispy pork cutlet crowns a bowl of rich broth and noodles, creating a delightful blend of textures.</p>
+                <div class="price">₱250</div>
+            </div>
+            <div class="menu-card">
+                <img src="https://i.ibb.co/fk2hYcV/Untitled-design-16.png" alt="Shio Ramen" class="food-image">
+                <h2 class="title">Tonkai Ramen</h2>
+                <p class="description">Creamy tonkatsu broth meets a medley of toppings, offering a robust and satisfying ramen adventure.</p>
+                <div class="price">₱225</div>
+            </div>
+            <div class="menu-card">
+                <img src="https://i.ibb.co/bs4kpHv/Untitled-design-17.png" alt="Shio Ramen" class="food-image">
+                <h2 class="title">Gyu Ramen</h2>
+                <p class="description">Crispy beef cutlet crowns a bowl of rich broth and noodles, creating a delightful blend of textures.</p>
+                <div class="price">₱230</div>
             </div>
         </div>
     </div>

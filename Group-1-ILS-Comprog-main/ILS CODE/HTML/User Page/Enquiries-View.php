@@ -95,12 +95,7 @@ $result = $stmt->get_result();
                     <?php endif; ?>
                 </div>
 
-                <div class="divider"></div>
-
-                <div class="table-number">
-                    <h3>TABLE NO.</h3>
-                    <p>10F</p>
-                </div>
+                <div class="divider"></div> 
 
                 <div class="one-time">
                     ONE TIME USE   VALID UNTIL THE RESERVATION DATE

@@ -32,7 +32,7 @@ $db = "matsurikadb";
             $result = mysqli_query($conn, $query);
 
             if ($result) {
-                redirect ('../HTML/RamenMatsurikaFrontPage.php', 'Thank you for enquiring');
+                redirect ('../HTML/RamenMatsurikaReservation.php', 'Thank you for enquiring');
             } else {
                 redirect ('../HTML/RamenMatsurikaReservation.php', 'Something went wrong');
             }

@@ -1,10 +1,18 @@
 <?php 
-require ('../HTML/Admin Page/adminphp/functions.php');
+require ('../HTML/User Page/userphp/functions.php');
 
 if (!isset($_SESSION['loggedInUser'])) {
     redirect ('LogInPage.php', 'You need to log in before making a reservation');
     exit;
 }
+
+$email = $_SESSION['loggedInUser']['email'];
+
+$query = "SELECT email, phoneNumber, numGuest, dateTime, reservation, created_at FROM reservationdb WHERE email = ? LIMIT 1";
+$stmt = $conn->prepare($query);
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$result = $stmt->get_result();
 ?>
 
 <!DOCTYPE html>
@@ -103,6 +111,7 @@ if (!isset($_SESSION['loggedInUser'])) {
                     </ul>
                 </nav>
             </div>
+            <?php echo frontPopUp() ?>
         </div>
     </header>
 
@@ -178,6 +187,101 @@ if (!isset($_SESSION['loggedInUser'])) {
                     </ul>
                 </div>
             </form>
+
+
+            <!--RECEIPT-->
+
+            <?php
+                if ($result && $result->num_rows > 0) {
+            ?>
+            <div class="receipt-flex">
+                <div class="main-receipt">
+                    <div class="receipt">
+                        <div class="header">
+                            <div class="receiptLogo">
+                                <img src="https://i.ibb.co/c3DkSHT/matsurika-10.png">
+                            </div>
+                            <div class="title">
+                                <h1>Reservation Entry</h1>
+                                <h1>Receipt</h1>
+                                <p>Matsurika ramen</p>
+                            </div>
+
+                            <?php 
+                                if ($result && $result->num_rows > 0): 
+                            ?>
+                            <?php while ($row = $result->fetch_assoc()): ?>
+                            <div class="enquiry">
+                                #Enquiries<br>
+                                Date: <br> 
+                                    <?php 
+                                        $date = new DateTime($row['created_at']);
+                                        echo $date->format('Y-m-d'); 
+                                    ?>
+                            </div>
+                        </div>
+
+                        <h2>Details</h2>
+                        <div class="divider"></div>
+
+                        <div class="details">
+                            <div>
+                                <span>Contact Information:</span>
+                            </div>
+                            <div>
+                                <span><?php echo htmlspecialchars($row['email']); ?></span>
+                                <span><?php echo htmlspecialchars($row['phoneNumber']); ?></span>
+                            </div>
+                            <div>
+                                <span>Number of Guest:</span>
+                                <span><?php echo htmlspecialchars($row['numGuest']); ?></span>
+                            </div>
+                            <div>
+                                <span>Reservation type:</span>
+                                <span><?php echo htmlspecialchars($row['reservation']); ?></span>
+                            </div>
+                            <div>
+                                <span>Arrival Date and Time:</span>
+                                <span>
+                                <?php 
+                                    $date = new DateTime($row['dateTime']);
+                                    echo $date->format('Y-m-d h:i A'); 
+                                ?>
+                                </span>
+                            </div>
+                            <?php endwhile; ?>
+                            <?php else: ?>
+                            <tr>
+                                <td colspan="7">No Record Found</td>
+                            </tr>
+                            <?php endif; ?>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="one-time">
+                            ONE TIME USE   VALID UNTIL THE RESERVATION DATE
+                        </div>
+
+                        <div class="footer">
+                            Copyright 2024 © All rights Reserved. RAMEN<br>
+                            Matsurika PH
+                        </div>
+
+                        <div class="card-header">
+                            <h4>
+                                <a href="./User Page/Enquiries-View.php" class="btn btn-success btn-lg">View</a>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <?php
+            } else { 
+                exit();
+            }?>
+            
         </div>
     </div>
 
@@ -232,6 +336,7 @@ if (!isset($_SESSION['loggedInUser'])) {
         </div>
     </div>
 </footer>    
+
 
 <!-- Include Bootstrap JS (requires Popper) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
