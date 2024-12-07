@@ -194,9 +194,6 @@ div {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 95vh;
-    margin: 0px 0px 0px 100px;
-    margin-top: 60px;
 }
 .box{
      background: #fdfdfd;
