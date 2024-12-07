@@ -101,99 +101,86 @@ require ('../HTML/Admin Page/adminphp/functions.php');
     </header>
 </section>
 
-<!--Image Section: yung imahe sa taas ay---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<main class="page-menu  ">
-    <div class="grid-container">
-        <div class="image-top-container">
-            <div class="eywan">
-
-                <!--OPTIONAL TEXT-->
-                <div class="image-text">
-                    <h3></h3>
-                    <h1></h1>
-                </div>
-            </div>
-        </div>
 <!--MAIN SECTION (page container): PAGE CONTAINER ITO UNG PINAKA GITNA---------------------------------------------------------------------------------------------------------------------------->
-    <main class="page-container">
-        <div class="site-flex">
-            <div class="bg">
-                <div class="contact-container">
-                    <h1 class="landu">Support Center</h1>
-                    <div class="contact">
-                        <div class="contact-flex">
-                            <div class="info">
-                                <h4>Address</h4>
-                                <p class="lulu">Cavite, 4106 <br>
-                                    Rosario, Gen Trias Drive <br>
-                                    STI bldg.
-                                </p>
-                            </div>
-
-                            <div class="info">
-                                <h4>Email</h4>
-                                <p class="lulu">ramenmatsurika@gmail.com
-                                </p>
-                            </div>
+<main class="page-container">
+    <div class="site-flex">
+        <div class="bg">
+            <div class="contact-container">
+                <h1 class="landu">Support Center</h1>
+                <div class="contact">
+                    <div class="contact-flex">
+                        <div class="info">
+                            <h4>Address</h4>
+                            <p class="lulu">Cavite, 4106 <br>
+                                Rosario, Gen Trias Drive <br>
+                                STI bldg.
+                            </p>
                         </div>
 
-                        <div class="contact-flex">
-                            <div class="info">
-                                <h4>Phone</h4>
-                                <p class="lulu">(09) 5069-9899</p>
-                            </div>
-
-                            <div class="info">
-                                <h4>Open</h4>
-                                <p class="lulu">We are open from 7AM to 10PM, every day</p>
-                            </div>
+                        <div class="info">
+                            <h4>Email</h4>
+                            <p class="lulu">ramenmatsurika@gmail.com
+                            </p>
                         </div>
                     </div>
-                </div>
 
+                    <div class="contact-flex">
+                        <div class="info">
+                            <h4>Phone</h4>
+                            <p class="lulu">(09) 5069-9899</p>
+                        </div>
 
-                <!--CONTACT US FORM-->
-                <div class="site-container">
-                    <div class="box form-box">
-
-                        <?php echo messagePopUp() ?>
-
-                        <header>Contact us</header> 
-                        <form action="../PHP/SendEmail.php" method="post">
-                            <div class="field input">
-                                <label for="firstName">First Name</label>
-                                <input type="text" name="firstName" id="firstName" required>    
-                            </div>
-
-                            <div class="field input">
-                                <label for="lastName">Last Name</label>
-                                <input type="text" name="lastName" id="lastName" required>
-                            </div>
-
-                            <div class="field input">
-                                <label for="email">Email</label>
-                                <input type="email" name="email" placeholder="user@email.com" required>
-                            </div>
-
-                            <div class="field input">
-                                <label for="phoneNumber">Phone Number</label>
-                                <input type="tel" maxlength="11" pattern="^\d{11}$" title="Phone number must be exactly 11 digits" name="phoneNumber" id="phoneNumber" required>
-                            </div>
-
-                            <div class="field input">
-                                <label for="message">Message</label>
-                                <textarea name="message" id="message" style="border: 1px solid #ccc; color: #fff; border-radius: 5px; scrollbar-width: thin; padding: 0 10px;"></textarea>
-                            </div>
-
-                            <div class="field">
-                                <input type="submit" class="button" name="submit" value="Submit" required>
-                            </div> 
-                        </form>
+                        <div class="info">
+                            <h4>Open</h4>
+                            <p class="lulu">We are open from 7AM to 10PM, every day</p>
+                        </div>
                     </div>
                 </div>
             </div>
+
+
+            <!--CONTACT US FORM-->
+            <div class="site-container">
+                <div class="box form-box">
+
+                    <?php echo messagePopUp() ?>
+
+                    <header>Contact us</header> 
+                    <form action="../PHP/SendEmail.php" method="post">
+                        <div class="field input">
+                            <label for="firstName">First Name</label>
+                            <input type="text" name="firstName" id="firstName" required>    
+                        </div>
+
+                        <div class="field input">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" name="lastName" id="lastName" required>
+                        </div>
+
+                        <div class="field input">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" placeholder="user@email.com" required>
+                        </div>
+
+                        <div class="field input">
+                            <label for="phoneNumber">Phone Number</label>
+                            <input type="tel" maxlength="11" pattern="^\d{11}$" title="Phone number must be exactly 11 digits" name="phoneNumber" id="phoneNumber" required>
+                        </div>
+
+                        <div class="field input">
+                            <label for="message">Message</label>
+                            <textarea name="message" id="message" style="border: 1px solid #ccc; color: #fff; border-radius: 5px; scrollbar-width: thin; padding: 0 10px;"></textarea>
+                        </div>
+
+                        <div class="field">
+                            <input type="submit" class="button" name="submit" value="Submit" required>
+                        </div> 
+                    </form>
+                </div>
+            </div>
         </div>
-    </main>
+    </div>
+</main>
 <!--FOOTER------------------------------------------------------------------------------------------------------------------------------->
 <footer id="footer">
     <div class="footer-container">

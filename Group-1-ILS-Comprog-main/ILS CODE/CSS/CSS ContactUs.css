@@ -151,25 +151,24 @@ div {
 /*MAIN*********************************************************************************************************************************/
 
 .page-container {
-    background-image: url(https://i.ibb.co/mhLmpvV/HOME-5.png);
+    background-image: url(https://i.ibb.co/fn4X7L8/Untitled-design-20.png);
     background-size: cover;
-    max-width: 100%;
     background-repeat: no-repeat;
-    display: grid;
-    padding: 70px;
+    padding: 90px 220px;
 }
 .site-flex {
     display: flex;
     justify-content: center;
-    margin: 90px 0px 90px 0px;
+    margin: 170px 0px;
 }
 .bg {
     display: flex;
-    justify-content: center;
-    padding: 0px 50px;
+    justify-content: space-evenly;
     background-color: #fff;
     border-radius: 50px;
-    height: 700px;
+    height: 550px;
+    width: -webkit-fill-available;
+    
 }
 .contact-container {
     align-content: center;
@@ -208,7 +207,6 @@ div {
 }
 .form-box{
     width: 450px;
-    margin: 120px 10px 200px;
 }
 .form-box header{
     font-size: 25px;
