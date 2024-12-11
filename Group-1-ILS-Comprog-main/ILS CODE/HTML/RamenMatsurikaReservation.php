@@ -340,5 +340,39 @@ $result = $stmt->get_result();
 
 <!-- Include Bootstrap JS (requires Popper) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+<!--DATE TIME-->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const dateTimeInput = document.getElementById("dateTime");
+
+        dateTimeInput.addEventListener("input", function () {
+            const now = new Date();
+            const selectedDate = new Date(dateTimeInput.value);
+
+            // Check if the selected date is in the past
+            if (selectedDate < now) {
+                alert("The selected date and time must be in the present or future.");
+                dateTimeInput.value = ""; // Clear the input
+                return;
+            }
+
+            // Check if the time is between 7:00 AM and 10:00 PM
+            const selectedHours = selectedDate.getHours();
+            if (selectedHours < 7 || selectedHours > 21) {
+                alert("Please select a time between 7:00 AM and 10:00 PM.");
+                dateTimeInput.value = ""; // Clear the input
+                return;
+            }
+
+            // Check if the selected time is at least 6 hours ahead
+            const sixHoursLater = new Date(now.getTime() + 6 * 60 * 60 * 1000); // Current time + 6 hours
+            if (selectedDate < sixHoursLater) {
+                alert("Please select a time at least 6 hours from the current time.");
+                dateTimeInput.value = ""; // Clear the input
+            }
+        });
+    });
+</script>
 </body>
 </html>

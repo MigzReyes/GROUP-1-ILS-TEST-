@@ -54,7 +54,7 @@ $user = $_SESSION['loggedInUser'];
             <div class="col-md-6">
                 <div class="mb-3">
                     <label class="form-label">Password</label>
-                    <input class="form-control" placeholder="Please use a strong password" value="<?php echo $user['password']; ?>" type="password" name="password" id="password" autocomplete="off" required>
+                    <input class="form-control" placeholder="Please use a strong password" value="<?php echo $user['password']; ?>" type="password" name="password" id="password" minlength="6" autocomplete="off" required>
             
                 </div>
             </div>

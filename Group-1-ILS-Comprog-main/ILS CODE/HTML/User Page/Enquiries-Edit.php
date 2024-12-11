@@ -73,7 +73,7 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label>Date</label>
-                                    <input type="datetime-local" name="dateTime" value="<?php echo $user['data']['dateTime']; ?>" class="form-control" required>
+                                    <input type="datetime-local" id="dateTime" name="dateTime" value="<?php echo $user['data']['dateTime']; ?>" class="form-control" required>
                                 </div>
                             </div>
 

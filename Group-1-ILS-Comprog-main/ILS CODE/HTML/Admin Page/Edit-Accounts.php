@@ -68,7 +68,7 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label>Password</label>
-                                    <input type="text" placeholder="Please use a strong password" name="password" value="<?php echo $user['data']['password']; ?>" class="form-control" required>
+                                    <input type="text" placeholder="Please use a strong password" minlength="6" name="password" value="<?php echo $user['data']['password']; ?>" class="form-control" required>
                                 </div>
                             </div>
 

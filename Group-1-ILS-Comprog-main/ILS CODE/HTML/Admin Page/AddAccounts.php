@@ -53,7 +53,7 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label>Password</label>
-                                    <input type="text" placeholder="Please use a strong password" name="password" class="form-control" required>
+                                    <input type="text" placeholder="Please use a strong password" minlength="6" name="password" class="form-control" required>
                                 </div>
                             </div>
 

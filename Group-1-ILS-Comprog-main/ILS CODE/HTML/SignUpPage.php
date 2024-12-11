@@ -88,7 +88,7 @@ if (isset($_SESSION['loggedInUser'])) {
 
                 <div class="field input">
                     <label for="password">Password</label>
-                    <input type="password" placeholder="Please use a strong password" name="password" id="password" autocomplete="off" required>
+                    <input type="password" placeholder="Please use a strong password" name="password" id="password" minlength="6" autocomplete="off" required>
                 </div>
 
                 <div class="field input">
