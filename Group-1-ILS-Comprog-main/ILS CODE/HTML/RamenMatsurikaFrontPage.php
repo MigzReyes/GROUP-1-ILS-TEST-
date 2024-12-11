@@ -176,7 +176,7 @@ require ('../HTML/Admin Page/adminphp/functions.php');
 
                             <!--RESERVATION INFO BUTTOM-->
                             <div class="reservation-button-container">
-                                <a href="../HTML/LogInPage.php">
+                                <a href="../HTML/RamenMatsurikaReservation.php">
                                     <button class="reservation-button">CONTACT US</button>
                                 </a>
                             </div>
