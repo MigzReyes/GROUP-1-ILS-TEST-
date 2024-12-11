@@ -279,7 +279,7 @@ $result = $stmt->get_result();
 
             <?php
             } else { 
-                exit();
+                echo "<p></p>";
             }?>
             
         </div>
