@@ -1,5 +1,3 @@
 GROUP 2 ILS COMRPOG
 
 This repository is for group 2 ILS comprog
-
-*IF YOU CAN READ THIS, I SUCCESFULLY PULL AND MERGED A REQUEST
